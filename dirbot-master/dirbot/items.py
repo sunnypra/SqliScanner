@@ -1,3 +1,4 @@
+import scrapy
 from scrapy.item import Item, Field
 
 
