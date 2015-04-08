@@ -19,11 +19,12 @@ class DmozSpider(Spider):
         "app4.com",
         "app5.com",
                     ]
-    sta =["https://app1.com/"]
+    sta =["https://app1.com"]
     start_urls = [
-        "https://app1.com/users/login.php"
-        #"http://app4.com/"
-        #"http://app5.com",
+        "https://app1.com/users/login.php",
+        "https://app1.com",
+        "http://app4.com",
+        "http://app5.com",
                     ]
     login_user = [
         "scanner2",
@@ -54,7 +55,7 @@ class DmozSpider(Spider):
 
 
     def parse(self, response):
-        self.parse1(self.start_urls[0])
+        self.parse1(self.start_urls[1])
         args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[1], self.login_pass[1])
         return FormRequest(url, method=method, formdata=args, callback=self.after_login)
   
@@ -76,7 +77,7 @@ class DmozSpider(Spider):
             print "prakash"
             print response.url
             print "response end!!\n"
-            return Request(url=str(self.sta[0]),
+            return Request(url=self.start_urls[1],
                            callback=self.parse1)
 
 
@@ -94,15 +95,16 @@ class DmozSpider(Spider):
             item['url'] = site.xpath('a/@href').extract()
             item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
             yield self.collect_item(item)
-            if(str(item['url'][0]) != None):
-                print "shailza1\n\n\n"
-                print item['url'][0]
-                print "shailza2\n\n\n"
-                new_url = str(self.sta[0])+str(item['url'][0])
-                print "shailza3\n\n\n"
-                print new_url
-                print "shailza4\n\n\n"
-                yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
+            if(len(item['url']) != 0):
+               if(len(str(item['url'][0])) != 1):
+                 print "shailza1\n\n\n"
+                 print item['url'][0]
+                 print "shailza2\n\n\n"
+                 new_url = str(self.start_urls[1])+str(item['url'][0])
+                 print "shailza3\n\n\n"
+                 print new_url
+                 print "shailza4\n\n\n"
+                 yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
                 #print item['name'] ,item['url'] ,item['description']
             items.append(item)
         self.dic[str(self.start_urls[0])]=items;
@@ -128,10 +130,12 @@ class DmozSpider(Spider):
             item['name'] = site.xpath('a/text()').extract()
             item['url'] = site.xpath('a/@href').extract()
             item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
-            if(str(item['url'][0]) != None):
+            if(len(item['url']) != 0): 
+              if(len(str(item['url'][0])) != 1):
                 print "shailza5\n\n\n"
                 new_url = str(self.sta[0])+str(item['url'][0]);
-                print item['url'][0]
+                print item['url'][0] + "ssss"
+                print len(str(item['url'][0]))
                 print new_url
                 print "shailza6\n\n\n"
                 yield Request(new_url, meta={'item':item},callback=self.parse_items)
