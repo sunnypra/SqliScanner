@@ -68,13 +68,11 @@ class DmozSpider(Spider):
             ("The username/password combination you have entered is invalid"))
             in response.body) or 
             (response.url is self.start_urls[0])):
-            print "sunny"
             self.log("Login failed", level=log.ERROR)
             return
         # continue scraping with authenticated session...
         else:
             self.log("Login succeed!", level=log.DEBUG)
-            print "prakash"
             print response.url
             print "response end!!\n"
             return Request(url=self.start_urls[1],
@@ -82,8 +80,6 @@ class DmozSpider(Spider):
 
 
     def parse1(self, response):
-        print "sun"
-        print response.url
         sel = Selector(response)
         sites = sel.xpath('//ul/li')
 
@@ -97,17 +93,11 @@ class DmozSpider(Spider):
             yield self.collect_item(item)
             if(len(item['url']) != 0):
                if(len(str(item['url'][0])) != 1):
-                 print "shailza1\n\n\n"
-                 print item['url'][0]
-                 print "shailza2\n\n\n"
                  new_url = str(self.start_urls[1])+str(item['url'][0])
-                 print "shailza3\n\n\n"
-                 print new_url
-                 print "shailza4\n\n\n"
                  yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
-                #print item['name'] ,item['url'] ,item['description']
             items.append(item)
         self.dic[str(self.start_urls[0])]=items;
+        yield self.collect_item(item)
      #   print self.dic
      #   print "result"
 
@@ -132,19 +122,11 @@ class DmozSpider(Spider):
             item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
             if(len(item['url']) != 0): 
               if(len(str(item['url'][0])) != 1):
-                print "shailza5\n\n\n"
                 new_url = str(self.sta[0])+str(item['url'][0]);
-                print item['url'][0] + "ssss"
-                print len(str(item['url'][0]))
-                print new_url
-                print "shailza6\n\n\n"
                 yield Request(new_url, meta={'item':item},callback=self.parse_items)
                 self.dic[url]=items;
-
             items.append(item)
             yield self.collect_item(item)
-        print "final"
-        print self.dic
 
 
 
