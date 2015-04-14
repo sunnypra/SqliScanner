@@ -20,7 +20,7 @@ class DmozSpider(Spider):
         "app4.com",
         "app5.com",
                     ]
-    sta =["https://app4.com"]
+    sta =["https://app4.com/"]
     credentials = {
         "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
         "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
