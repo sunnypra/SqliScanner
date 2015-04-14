@@ -1,0 +1,10 @@
+[{
+	"http://example.com/index.html": [{
+		method: GET/POST,
+		params: 
+			[
+			key: param1,
+			value: ’ or ’1’=’1
+			]
+	}]
+}]
