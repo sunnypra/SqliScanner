@@ -16,10 +16,7 @@ def _form_score(form):
 
     typecount = defaultdict(int)
     for x in form.inputs:
-        try:
-                type_ = x.type if isinstance(x, html.InputElement) else "other"
-        except:
-                type_ = "other"
+        type_ = x.type if isinstance(x, html.InputElement) else "other"
         typecount[type_] += 1
 
     if typecount['text'] > 1:
@@ -78,7 +75,7 @@ def fill_login_form(url, body, username, password):
     userfield, passfield = _pick_fields(form)
     form.fields[userfield] = username
     form.fields[passfield] = password
-    form_values = form.form_values() + submit_value(form)
+    form_values = form.form_values()
     return form_values, form.action or form.base_url, form.method
 
 
@@ -96,9 +93,9 @@ def main():
 
     r = requests.get(args.url)
     values, action, method = fill_login_form(args.url, r.text, args.username, args.password)
-    print('url: {0}\nmethod: {1}\npayload:'.format(action, method))
+    print(u'url: {0}\nmethod: {1}\npayload:'.format(action, method))
     for k, v in values:
-        print('- {0}: {1}'.format(k, v))
+        print(u'- {0}: {1}'.format(k, v))
 
 
 if __name__ == '__main__':

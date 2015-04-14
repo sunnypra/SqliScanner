@@ -14,13 +14,13 @@ from loginform import fill_login_form
 
 
 class DmozSpider(Spider):
-    name = "sqli1"
+    name = "sqli"
     allowed_domains = [
         "app1.com",
         "app4.com",
         "app5.com",
                     ]
-    sta =["https://app5.com/www"]
+    sta =["https://app4.com"]
     credentials = {
         "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
         "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
@@ -74,6 +74,7 @@ class DmozSpider(Spider):
                     ]
     dic={}
 
+
     def parse(self, response):
         self.parse1(self.start_urls[1])
         args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[1], self.login_pass[1])
@@ -81,7 +82,7 @@ class DmozSpider(Spider):
 
     """
     start_urls = [
-                  "https://app5.com/www/index.php"
+                  "http://app4.com"
         #"https://app1.com/users/login.php",
 #         "https://app1.com",
 #         "http://app4.com",
@@ -97,7 +98,7 @@ class DmozSpider(Spider):
         #print response.headers.items()
         #print "\n\n"
 
-        login_user = "admin"#self.credentials[response.request.url][0]
+        login_user = "admin@admin.com"#self.credentials[response.request.url][0]
         login_pass = "admin"#self.credentials[response.request.url][1]
         args, url, method = fill_login_form(response.url, response.body, login_user, login_pass)
         yield FormRequest(response.url, method=method, formdata=args,dont_filter=True,callback=self.after_login)
@@ -122,7 +123,7 @@ class DmozSpider(Spider):
         else:
             self.log("Login succeed!", level=log.DEBUG)
             print response.url
-            print "response end!!"+ response.url
+            print "response end!!\n"
             return Request(url=response.url,
                            callback=self.parse1)
 
@@ -130,7 +131,7 @@ class DmozSpider(Spider):
     def parse1(self, response):
         sel = Selector(response)
         sites = sel.xpath('//ul/li')
-        print "sunnnnnnnnnnnnnnnnnnnnnnn"
+
         items = []
         urls=[]
         for site in sites:
@@ -142,7 +143,6 @@ class DmozSpider(Spider):
             if(len(item['url']) != 0):
                if(len(str(item['url'][0])) != 1):
                  new_url = str(self.sta[0])+str(item['url'][0])
-                 print "new_url :"+new_url
                  yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
             items.append(item)
         self.dic[str(self.start_urls[0])]=items;
