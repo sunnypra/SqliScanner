@@ -1,0 +1,24 @@
+{
+	"app1.com": [{
+		"/url1.php": "query-string",
+		"/admin/group.php": "op=edit&use_js=1&group_id=1",
+
+		"/url2.php": [{
+			"type": "GET",
+			"text": [],
+			"button": []
+		}]		
+	}],
+	
+	"app2.com": [{
+		"/url1.php": [{
+			"type": "POST",
+			"text": [],
+			"button": []
+		}],
+
+		"/url2.php": "query-string"
+		
+	}]
+	
+}
