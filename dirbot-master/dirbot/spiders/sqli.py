@@ -10,7 +10,7 @@ from scrapy.http.request import Request
 from scrapy.http import FormRequest
 from scrapy import log
 from loginform import fill_login_form
-
+import json
 
 
 class DmozSpider(Spider):
@@ -20,7 +20,7 @@ class DmozSpider(Spider):
         "app4.com",
         "app5.com",
                     ]
-    sta =["https://app5.com/www"]
+    sta =["https://app5.com/"]
     credentials = {
         "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
         "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
@@ -128,9 +128,14 @@ class DmozSpider(Spider):
 
 
     def parse1(self, response):
+        print response
         sel = Selector(response)
-        sites = sel.xpath('//ul/li')
-        print "sunnnnnnnnnnnnnnnnnnnnnnn"
+        texts=sel.xpath("//input[@type='text']")
+        print "ttttttt"
+        print texts
+        print "sssssss"
+        sites = sel.xpath("//ul/li[@onclick]")
+        print sites
         items = []
         urls=[]
         for site in sites:
@@ -146,7 +151,7 @@ class DmozSpider(Spider):
                  yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
             items.append(item)
         self.dic[str(self.start_urls[0])]=items;
-        yield self.collect_item(item)
+        #yield self.collect_item(self.dic)
      #   print self.dic
      #   print "result"
 
@@ -175,9 +180,13 @@ class DmozSpider(Spider):
                 yield Request(new_url, meta={'item':item},callback=self.parse_items)
                 self.dic[url]=items;
             items.append(item)
-            yield self.collect_item(item)
+            yield self.collect_item(self.dic)
 
 
 
-    def collect_item(self, item):
-        return item
+    def collect_item(self, dic):
+        print "sunny_res"+self.dic
+        self.file = open('phase1items.json', 'wb')
+        json.dumps([{'name': k, 'size': v} for k,v in self.dic.items()], indent=4)
+        #self.file.write(line)
+        #return item

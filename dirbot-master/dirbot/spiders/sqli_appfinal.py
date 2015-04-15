@@ -10,15 +10,16 @@ from scrapy.http.request import Request
 from scrapy.http import FormRequest
 from scrapy import log
 from loginform import fill_login_form
-
-
+from scrapy.xlib.pydispatch import dispatcher
+from scrapy import signals
+import json
 
 class DmozSpider(Spider):
-    name = "sqli"
+    name = "sqli111"
     allowed_domains = [
-        "app1.com",
-        "app4.com",
-        "app5.com",
+
+        "app4.com"
+
                     ]
     sta =["https://app4.com/"]
     credentials = {
@@ -89,6 +90,10 @@ class DmozSpider(Spider):
 #         "http://app5.com",
                     ]
     dic={}
+    fin = []
+    urllis =[]
+    #obj = open('data.json', 'wb')
+    #obj.write("{")
     def parse(self,response):
         #print "Status:",response.status
         #print "Request Headers"
@@ -109,7 +114,8 @@ class DmozSpider(Spider):
                 yield FormRequest.from_response(response, method=method, formdata=args, formnumber=number, callback=self.after_login)
         """
 
-
+    def __init__(self):
+        dispatcher.connect(self.spider_closed, signals.spider_closed)
 
     def after_login(self, response):
         # check login succeed before going on
@@ -128,63 +134,148 @@ class DmozSpider(Spider):
                            callback=self.parse1)
 
 
+
     def parse1(self, response):
+
+        print "response" ,response
         sel = Selector(response)
-        sites = sel.xpath('//ul/li')
-        sites1=sel.xpath('//a/@href').extract();
+        #Wsites = sel.xpath('//ul/li')
+        forms = sel.xpath("//form")
+        print "forms",forms
+        sites = sel.xpath('//a/@href').extract()
+        actions=sel.xpath("//form/@action").extract()
+        texts=sel.xpath("//input[@type='text']/@name").extract()
+        pwds= sel.xpath("//input[@type='password']/@name").extract()
+        bts = sel.xpath("//input[@type='submit']/@name").extract()
+        filist =texts+pwds+bts
         print sites
+        print actions
+        print texts
+        print pwds
+        print filist
         print "ssssssss"
-        print sites1
+        #print sites1
         items = []
         urls=[]
         for site in sites:
-            item = Website()
-            item['name'] = site.xpath('a/text()').extract()
-            item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
-            #yield self.collect_item(item)
-            if(len(item['url']) != 0):
-               if(len(str(item['url'][0])) != 1):
-                 new_url = str(self.sta[0])+str(item['url'][0])
-                 yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
-            items.append(item)
-            yield self.collect_item(item)
-        self.dic[str(self.start_urls[0])]=items;
+            print "dsds",str(site)
+            if(len(str(site)) != 1):
+                if((str(site).startswith("http")) or (str(site).startswith("https"))):
+                    new_url = str(site)
+                else:
+                    new_url = str(self.sta[0])+str(site)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            dic={}
 
+            dic["url"] =str(new_url)
+            dic["method"] =""
+            dic["param"] = []
+            self.fin.append(dic)
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(dic)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+
+        for act in actions:
+            print "sssssddddd",str(act)
+            if(len(str(act)) != 1):
+                if((str(act).startswith("http")) or (str(act).startswith("https"))):
+                    new_url = str(act)
+                else:
+                    new_url = str(self.sta[0])+str(act)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            dic["url"] = str(new_url)
+            dic["method"] =""
+            dic["param"] = filist
+            self.fin.append(dic)
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+        print self.fin
+
+    def parse_items(self, response):
+        print "response@@@" ,response
+        sel = Selector(response)
+        #Wsites = sel.xpath('//ul/li')
+        sites = sel.xpath('//a/@href').extract()
+        actions=sel.xpath("//form/@action").extract()
+        texts=sel.xpath("//input[@type='text']/@name").extract()
+        pwds= sel.xpath("//input[@type='password']/@name").extract()
+        bts = sel.xpath("//input[@type='submit']/@name").extract()
+        filist =texts+pwds+bts
+        print sites
+        print actions
+        print texts
+        print pwds
+        print filist
+        print "mmmmmmm"
+        #print sites
+        #print actions
+        #print texts
+        #print "ssssssss"
+        #print sites1
+        items = []
+        urls=[]
+        for site in sites:
+            print "dsds",str(site)
+            if(len(str(site)) != 1):
+                if((str(site).startswith("http")) or (str(site).startswith("https"))):
+                    new_url = str(site)
+                else:
+                    new_url = str(self.sta[0])+str(site)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            dic={}
+            dic["url"] = str(new_url)
+            dic["method"] =""
+            dic['param'] = []
+            self.fin.append(dic)
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(dic)+",")
+            if(len(str(site)) != 1):
+                 new_url = str(self.sta[0])+str(site)
+                 yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+        for act in actions:
+            print "sssssddddd",str(act)
+            if(len(str(act)) != 1):
+                if((str(act).startswith("http")) or (str(act).startswith("https"))):
+                    new_url = str(act)
+                else:
+                    new_url = str(self.sta[0])+str(act)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            dic["url"] = new_url
+            dic["method"] =""
+            dic["param"] = filist
+            self.fin.append(dic)
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
      #   print self.dic
      #   print "result"
 
 
-    def parse_items(self, response):
-        print "response",response
-        sel = Selector(response)
-        sites = sel.xpath('//ul/li')
-        print sites
-        sites1=sel.xpath('//a/@href').extract();
-        print "bbbbbbbbbbbbbbbb"
-        print sites1
-
-        if response.status in [404,500,303]:
-            raise CloseSpider("Met the page which doesn't exist")
-
-        url= response.request.meta['url']
-        print "ss"
-        print url
-        items = []
-        for site in sites:
-            item = Website()
-            item['name'] = site.xpath('a/text()').extract()
-            item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
-            if(len(item['url']) != 0):
-              if(len(str(item['url'][0])) != 1):
-                new_url = str(self.sta[0])+str(item['url'][0]);
-                yield Request(new_url, meta={'item':item},callback=self.parse_items)
-
-            items.append(item)
-            yield self.collect_item(item)
-        self.dic[url]=items;
-        #yield self.collect_item(item)
+    def spider_closed(self, spider):
+       # for s in self.json_objects:
+        #  print s
+#       all_json_objects = {}
+ #      all_json_objects["injections"] =  self.json_objects
+       f = open("data.json", 'wb')
+ #      jsonString = json.dumps(jsonObj)
+       f.write(json.dumps(self.fin,indent= 4, sort_keys = True))
+       f.close()
+       #self.callback_function =  """payload_generation("Stage2.json")"""
+    #   self.parse()
+   #    self.parse1(url = self.start_urls[0])
+       #self.payload_generation("Stage2.json")
 
 
 
