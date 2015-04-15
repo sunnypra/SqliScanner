@@ -14,7 +14,7 @@ from loginform import fill_login_form
 
 
 class DmozSpider(Spider):
-    name = "sqli"
+    name = "sqli111"
     allowed_domains = [
         "app1.com",
         "app4.com",
@@ -89,6 +89,9 @@ class DmozSpider(Spider):
 #         "http://app5.com",
                     ]
     dic={}
+    fin = []
+    urllis =[]
+    obj = open('data.json', 'wb')
     def parse(self,response):
         #print "Status:",response.status
         #print "Request Headers"
@@ -128,63 +131,85 @@ class DmozSpider(Spider):
                            callback=self.parse1)
 
 
+
     def parse1(self, response):
+
+        print "response" ,response
         sel = Selector(response)
-        sites = sel.xpath('//ul/li')
-        sites1=sel.xpath('//a/@href').extract();
+        #Wsites = sel.xpath('//ul/li')
+        sites = sel.xpath('//a/@href').extract()
+        actions=sel.xpath("//form/@action")
+        texts=sel.xpath("//input[@type='text']")
         print sites
+        print actions
+        print texts
         print "ssssssss"
-        print sites1
+        #print sites1
         items = []
         urls=[]
         for site in sites:
-            item = Website()
-            item['name'] = site.xpath('a/text()').extract()
-            item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
-            #yield self.collect_item(item)
-            if(len(item['url']) != 0):
-               if(len(str(item['url'][0])) != 1):
-                 new_url = str(self.sta[0])+str(item['url'][0])
-                 yield Request(new_url, meta={'item':item,'url':new_url},callback=self.parse_items)
-            items.append(item)
-            yield self.collect_item(item)
-        self.dic[str(self.start_urls[0])]=items;
+            print "dsds",str(site)
+            if(len(str(site)) != 1):
+                if((str(site).startswith("http")) or (str(site).startswith("https"))):
+                    new_url = str(site)
+                else:
+                    new_url = str(self.sta[0])+str(site)
+            else :
+                continue
+            self.urllis.append(new_url)
+            dic={}
+            dic['url'] = new_url
+            dic['method'] =""
+            dic['param'] = {}
+            self.fin.append(dic)
+            self.obj.write(str(dic))
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+        for act in actions:
+            print "sssssddddd",act
+            path= act.xpath('data()').extract()
+            print "path",path
+        print self.fin
+
+    def parse_items(self, response):
+        print "response@@@" ,response
+        sel = Selector(response)
+        #Wsites = sel.xpath('//ul/li')
+        sites = sel.xpath('//a/@href').extract()
+        actions=sel.xpath("//form/@action")
+        texts=sel.xpath("//input[@type='text']")
+        #print sites
+        #print actions
+        #print texts
+        #print "ssssssss"
+        #print sites1
+        items = []
+        urls=[]
+        for site in sites:
+            print "dsds",str(site)
+            if str(site) in self.urllis:
+                continue
+            if(len(str(site)) != 1):
+                if((str(site).startswith("http")) or (str(site).startswith("https"))):
+                    new_url = str(site)
+                else:
+                    new_url = str(self.sta[0])+str(site)
+            else :
+                continue
+            dic={}
+            dic['url'] = new_url
+            dic['method'] =""
+            dic['param'] = {}
+            self.fin.append(dic)
+            self.obj.write(str(dic))
+            if(len(str(site)) != 1):
+                 new_url = str(self.sta[0])+str(site)
+                 yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
 
      #   print self.dic
      #   print "result"
 
 
-    def parse_items(self, response):
-        print "response",response
-        sel = Selector(response)
-        sites = sel.xpath('//ul/li')
-        print sites
-        sites1=sel.xpath('//a/@href').extract();
-        print "bbbbbbbbbbbbbbbb"
-        print sites1
 
-        if response.status in [404,500,303]:
-            raise CloseSpider("Met the page which doesn't exist")
-
-        url= response.request.meta['url']
-        print "ss"
-        print url
-        items = []
-        for site in sites:
-            item = Website()
-            item['name'] = site.xpath('a/text()').extract()
-            item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
-            if(len(item['url']) != 0):
-              if(len(str(item['url'][0])) != 1):
-                new_url = str(self.sta[0])+str(item['url'][0]);
-                yield Request(new_url, meta={'item':item},callback=self.parse_items)
-
-            items.append(item)
-            yield self.collect_item(item)
-        self.dic[url]=items;
-        #yield self.collect_item(item)
 
 
 
