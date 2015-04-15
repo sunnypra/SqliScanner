@@ -5,11 +5,6 @@ import selenium.webdriver.common.alert
 from selenium.webdriver.common.by import By
 import json
 
-temp_file = open("Step3output.json",'r')
-data = json.load(temp_file)
-data2 = data[0]
-keyValues = {}
-
 # store all values for one url in a dictionary
 def getKeyValue(params,keyValues):
 	paramsDic = params[0]
@@ -23,15 +18,22 @@ def getKeyValue(params,keyValues):
 #login function
 def login(driver,username,passwd,url,usernameID,passwdID):
 		driver.get(url)
-		if (driver.find_element(By.name(usernameID)).size() > 0):
+		print driver.find_elements_by_name(usernameID)
+		print driver.find_elements_by_id(usernameID)
+		print len(driver.find_elements_by_id(usernameID))
+		print driver.find_elements_by_name(passwdID)
+		print driver.find_elements_by_id(passwdID)
+		print len(driver.find_elements_by_id(passwdID))
+
+		if (len(driver.find_elements_by_name(usernameID)) > 0):
 			nameele = driver.find_element_by_name(usernameID)
-		elif (driver.findElements(By.id(usernameID)).size() > 0):
+		elif (len(driver.find_elements_by_id(usernameID)) > 0):
 			nameele = driver.find_element_by_id(usernameID)
 		nameele.send_keys(username)
 
-		if (driver.findElements(By.name(passwdID)).size() > 0):
+		if (len(driver.find_elements_by_name(passwdID)) > 0):
 			passele = driver.find_element_by_name(passwdID)
-		elif (driver.findElements(By.id(passwdID)).size() > 0):
+		elif (len(driver.find_elements_by_id(passwdID)) > 0):
 			passele = driver.find_element_by_id(passwdID)
 		passele.send_keys(passwd)
 
@@ -60,6 +62,18 @@ def	postAttack(driver,url,fieldID,fieldValue,buttonID):
 	buttonEle = driver.find_element_by_name(buttonID)
 	buttonEle.click()
 
+
+
+
+temp_file = open("Step3output.json",'r')
+data = json.load(temp_file)
+data2 = data[0]
+keyValues = {}
+
+#Load main file to get login url
+main_file = open("LoginData.json",'r')
+urlList = json.load(main_file)
+urlInfo = urlList[0]
 
 # try possible attacks in json file
 for key,value in data2.iteritems():
