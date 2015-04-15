@@ -1,0 +1,4 @@
+https://app4.com/query.php?op=mybugs&assignedto=1&open=0
+http:/app1.com/admin/group.php?&op=edit
+http:/app1.com/admin/group.php?op=edit&use_js=1&group_id=1
+https://app4.com//admin/status.php?op=edit&status_id=1
