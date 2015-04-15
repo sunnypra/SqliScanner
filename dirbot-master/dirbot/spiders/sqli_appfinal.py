@@ -140,6 +140,8 @@ class DmozSpider(Spider):
         print "response" ,response
         sel = Selector(response)
         #Wsites = sel.xpath('//ul/li')
+        forms = sel.xpath("//form")
+        print "forms",forms
         sites = sel.xpath('//a/@href').extract()
         actions=sel.xpath("//form/@action").extract()
         texts=sel.xpath("//input[@type='text']/@name").extract()
@@ -164,6 +166,8 @@ class DmozSpider(Spider):
                     new_url = str(self.sta[0])+str(site)
             else :
                 continue
+            if new_url in self.urllis:
+                continue
             self.urllis.append(new_url)
             dic={}
 
@@ -182,6 +186,8 @@ class DmozSpider(Spider):
                 else:
                     new_url = str(self.sta[0])+str(act)
             else :
+                continue
+            if new_url in self.urllis:
                 continue
             self.urllis.append(new_url)
             dic["url"] = str(new_url)
@@ -217,14 +223,15 @@ class DmozSpider(Spider):
         urls=[]
         for site in sites:
             print "dsds",str(site)
-            if str(site) in self.urllis:
-                continue
+
             if(len(str(site)) != 1):
                 if((str(site).startswith("http")) or (str(site).startswith("https"))):
                     new_url = str(site)
                 else:
                     new_url = str(self.sta[0])+str(site)
             else :
+                continue
+            if new_url in self.urllis:
                 continue
             dic={}
             dic["url"] = str(new_url)
@@ -243,6 +250,8 @@ class DmozSpider(Spider):
                 else:
                     new_url = str(self.sta[0])+str(act)
             else :
+                continue
+            if new_url in self.urllis:
                 continue
             self.urllis.append(new_url)
             dic["url"] = new_url
