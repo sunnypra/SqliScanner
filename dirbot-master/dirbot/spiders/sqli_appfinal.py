@@ -223,7 +223,6 @@ class DmozSpider(Spider):
         urls=[]
         for site in sites:
             print "dsds",str(site)
-
             if(len(str(site)) != 1):
                 if((str(site).startswith("http")) or (str(site).startswith("https"))):
                     new_url = str(site)
