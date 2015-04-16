@@ -1,0 +1,23 @@
+[{
+	"https://app5.com/www/index.php" :
+	[{
+		"loginURL" :"https://app5.com/www/index.php",
+		"username" : "abc",
+		"password" : "pwd",
+		"attackURL" : "https://app5.com/www/index.php"
+	}],
+	"https://app4.com" :
+	[{
+		"loginURL" :"https://app4.com",
+		"username" : "abc",
+		"password" : "pwd",
+		"attackURL" : "https://app4.com/www/index.php"
+	}],
+	"https://app1.com" :
+	[{
+		"loginURL" :"https://app1.com/users/login.php",
+		"username" : "abc",
+		"password" : "pwd",
+		"attackURL" : "https://app5.com/www/index.php"
+	}]
+}]
