@@ -17,11 +17,11 @@ import json
 class DmozSpider(Spider):
     name = "sqli111"
     allowed_domains = [
-
-        "app4.com"
-
-                    ]
-    sta =["https://app4.com/"]
+        "app5.com"
+      ]
+    sta =[
+          "https://app5.com/",
+          "https://app5.com/www/"]
     credentials = {
         "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
         "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
@@ -83,7 +83,7 @@ class DmozSpider(Spider):
 
     """
     start_urls = [
-                  "http://app4.com"
+                  "https://app5.com/www/index.php"
         #"https://app1.com/users/login.php",
 #         "https://app1.com",
 #         "http://app4.com",
@@ -103,7 +103,7 @@ class DmozSpider(Spider):
         #print response.headers.items()
         #print "\n\n"
 
-        login_user = "admin@admin.com"#self.credentials[response.request.url][0]
+        login_user = "admin"#self.credentials[response.request.url][0]
         login_pass = "admin"#self.credentials[response.request.url][1]
         args, url, method = fill_login_form(response.url, response.body, login_user, login_pass)
         yield FormRequest(response.url, method=method, formdata=args,dont_filter=True,callback=self.after_login)
@@ -137,10 +137,12 @@ class DmozSpider(Spider):
 
     def parse1(self, response):
 
-        print "response" ,response
+        print "response" ,response.url
+        if(str(response.url) in self.urllis or "logout" in str(response.url)):
+            return
         sel = Selector(response)
         #Wsites = sel.xpath('//ul/li')
-        forms = sel.xpath("//form")
+        forms = sel.xpath("//ul/li/@onclick").extract()
         print "forms",forms
         sites = sel.xpath('//a/@href').extract()
         actions=sel.xpath("//form/@action").extract()
@@ -163,7 +165,10 @@ class DmozSpider(Spider):
                 if((str(site).startswith("http")) or (str(site).startswith("https"))):
                     new_url = str(site)
                 else:
-                    new_url = str(self.sta[0])+str(site)
+                    if((str(site).startswith("/www")) or (str(site).startswith("www"))):
+                        new_url = str(self.sta[0])+str(site)
+                    else:
+                        new_url = str(self.sta[1])+str(site)
             else :
                 continue
             if new_url in self.urllis:
@@ -176,7 +181,9 @@ class DmozSpider(Spider):
             dic["param"] = []
             self.fin.append(dic)
             #self.obj.write(str(self.allowed_domains[0])+":"+str(dic)+",")
-            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+            if("logout" in str(new_url)):
+                return
+            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
 
         for act in actions:
             print "sssssddddd",str(act)
@@ -184,7 +191,10 @@ class DmozSpider(Spider):
                 if((str(act).startswith("http")) or (str(act).startswith("https"))):
                     new_url = str(act)
                 else:
-                    new_url = str(self.sta[0])+str(act)
+                    if((str(act).startswith("/www")) or (str(act).startswith("www"))):
+                        new_url = str(self.sta[0])+str(act)
+                    else:
+                        new_url = str(self.sta[1])+str(act)
             else :
                 continue
             if new_url in self.urllis:
@@ -194,14 +204,48 @@ class DmozSpider(Spider):
             dic["method"] =""
             dic["param"] = filist
             self.fin.append(dic)
+            if("logout" in str(new_url)):
+                return
             #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
-            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
+
+        for f in forms :
+            print "qwqw",str(f)
+            pos = str(f).find('\'')
+            locVal = str(f)[pos+1:len(str(f))-1]
+            actstr = str(locVal)
+            print "bvbvbv",actstr
+            if(len(str(actstr)) != 1):
+                if((str(actstr).startswith("http")) or (str(actstr).startswith("https"))):
+                    new_url = str(actstr)
+                else:
+                    if((str(actstr).startswith("/www")) or (str(actstr).startswith("www"))):
+                        new_url = str(self.sta[0])+str(actstr)
+                    else:
+                        new_url = str(self.sta[1])+str(actstr)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            dic["url"] = new_url
+            dic["method"] =""
+            dic["param"] = filist
+            self.fin.append(dic)
+            if("logout" in str(new_url)):
+                return
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
         print self.fin
 
     def parse_items(self, response):
-        print "response@@@" ,response
+        print "response@@@" ,response.url
+        if(str(response.url) in self.urllis or "logout" in str(response.url)) :
+            return
         sel = Selector(response)
         #Wsites = sel.xpath('//ul/li')
+        forms = sel.xpath("//ul/li/@onclick").extract()
+        print "forms",forms
         sites = sel.xpath('//a/@href').extract()
         actions=sel.xpath("//form/@action").extract()
         texts=sel.xpath("//input[@type='text']/@name").extract()
@@ -248,6 +292,28 @@ class DmozSpider(Spider):
                     new_url = str(act)
                 else:
                     new_url = str(self.sta[0])+str(act)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            dic["url"] = new_url
+            dic["method"] =""
+            dic["param"] = filist
+            self.fin.append(dic)
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
+
+        for f in forms :
+            print "qwqw",str(f)
+            locVal = str(f).split('=')
+            actstr = str(locVal[1]).strip()
+            print "bvbvbv",actstr
+            if(len(str(actstr)) != 1):
+                if((str(actstr).startswith("http")) or (str(actstr).startswith("https"))):
+                    new_url = str(actstr)
+                else:
+                    new_url = str(self.sta[0])+str(actstr)
             else :
                 continue
             if new_url in self.urllis:

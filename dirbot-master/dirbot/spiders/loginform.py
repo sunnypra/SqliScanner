@@ -78,7 +78,7 @@ def fill_login_form(url, body, username, password):
     userfield, passfield = _pick_fields(form)
     form.fields[userfield] = username
     form.fields[passfield] = password
-    form_values = form.form_values()# + submit_value(form)
+    form_values = form.form_values()+ submit_value(form)
     return form_values, form.action or form.base_url, form.method
 
 
