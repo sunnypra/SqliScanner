@@ -17,11 +17,11 @@ import json
 class DmozSpider(Spider):
     name = "sqli111"
     allowed_domains = [
-        "app5.com"
+        "app4.com"
       ]
     sta =[
-          "https://app5.com/",
-          "https://app5.com/www/"]
+          "https://app4.com/"
+          ,"https://app4.com/"]
     credentials = {
         "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
         "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
@@ -83,8 +83,9 @@ class DmozSpider(Spider):
 
     """
     start_urls = [
-                  "https://app5.com/www/index.php"
-        #"https://app1.com/users/login.php",
+                  "http://app4.com"
+                  #"https://app5.com/www/index.php"
+        #"https://app1.com/users/login.php"
 #         "https://app1.com",
 #         "http://app4.com",
 #         "http://app5.com",
@@ -103,7 +104,7 @@ class DmozSpider(Spider):
         #print response.headers.items()
         #print "\n\n"
 
-        login_user = "admin"#self.credentials[response.request.url][0]
+        login_user = "admin@admin.com"#self.credentials[response.request.url][0]
         login_pass = "admin"#self.credentials[response.request.url][1]
         args, url, method = fill_login_form(response.url, response.body, login_user, login_pass)
         yield FormRequest(response.url, method=method, formdata=args,dont_filter=True,callback=self.after_login)
@@ -183,7 +184,7 @@ class DmozSpider(Spider):
             #self.obj.write(str(self.allowed_domains[0])+":"+str(dic)+",")
             if("logout" in str(new_url)):
                 return
-            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
 
         for act in actions:
             print "sssssddddd",str(act)
@@ -207,7 +208,7 @@ class DmozSpider(Spider):
             if("logout" in str(new_url)):
                 return
             #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
-            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
 
         for f in forms :
             print "qwqw",str(f)
@@ -235,13 +236,13 @@ class DmozSpider(Spider):
             if("logout" in str(new_url)):
                 return
             #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
-            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
+            yield Request(new_url, meta={'url':new_url},callback=self.parse_items)
         print self.fin
 
     def parse_items(self, response):
         print "response@@@" ,response.url
-        if(str(response.url) in self.urllis or "logout" in str(response.url)) :
-            return
+        #if(str(response.url) in self.urllis or "logout" in str(response.url)) :
+        #   return
         sel = Selector(response)
         #Wsites = sel.xpath('//ul/li')
         forms = sel.xpath("//ul/li/@onclick").extract()

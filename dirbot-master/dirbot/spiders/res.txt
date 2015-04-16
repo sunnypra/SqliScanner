@@ -1,137 +1,41 @@
-https://app5.com/www/administrator.php
+https://app4.com/
 response end!!
 
-response https://app5.com/www/administrator.php
-forms [u"location='/www/administrator.php?ctg=personal&user=admin&op=dashboard'", u"location='/www/administrator.php?ctg=personal&user=admin&op=profile'"]
-[u'/www/administrator.php', u'javascript:void(0)', u'userpage.php?ctg=personal&user=admin', u'index.php?logout=true', u'/www/administrator.php?ctg=control_panel', u'administrator.php?ctg=news&add=1&popup=1', u'administrator.php?ctg=news', u'administrator.php?ctg=news', u'administrator.php?ctg=calendar&add=1&view_calendar=1429113600&popup=1', u'administrator.php?ctg=calendar', u'administrator.php?ctg=calendar', u'administrator.php?ctg=calendar&view_calendar=1425139200', u'administrator.php?ctg=calendar&view_calendar=1430409600', u'administrator.php?ctg=calendar&view_calendar=1396281600', u'administrator.php?ctg=calendar&view_calendar=1459440000', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427817600', u'administrator.php?ctg=calendar&view_calendar=1427904000', u'administrator.php?ctg=calendar&view_calendar=1427990400', u'administrator.php?ctg=calendar&view_calendar=1428076800', u'administrator.php?ctg=calendar&view_calendar=1428163200', u'administrator.php?ctg=calendar&view_calendar=1428249600', u'administrator.php?ctg=calendar&view_calendar=1428336000', u'administrator.php?ctg=calendar&view_calendar=1428422400', u'administrator.php?ctg=calendar&view_calendar=1428508800', u'administrator.php?ctg=calendar&view_calendar=1428595200', u'administrator.php?ctg=calendar&view_calendar=1428681600', u'administrator.php?ctg=calendar&view_calendar=1428768000', u'administrator.php?ctg=calendar&view_calendar=1428854400', u'administrator.php?ctg=calendar&view_calendar=1428940800', u'administrator.php?ctg=calendar&view_calendar=1429027200', u'administrator.php?ctg=calendar&view_calendar=1429113600', u'administrator.php?ctg=calendar&view_calendar=1429200000', u'administrator.php?ctg=calendar&view_calendar=1429286400', u'administrator.php?ctg=calendar&view_calendar=1429372800', u'administrator.php?ctg=calendar&view_calendar=1429459200', u'administrator.php?ctg=calendar&view_calendar=1429545600', u'administrator.php?ctg=calendar&view_calendar=1429632000', u'administrator.php?ctg=calendar&view_calendar=1429718400', u'administrator.php?ctg=calendar&view_calendar=1429804800', u'administrator.php?ctg=calendar&view_calendar=1429891200', u'administrator.php?ctg=calendar&view_calendar=1429977600', u'administrator.php?ctg=calendar&view_calendar=1430064000', u'administrator.php?ctg=calendar&view_calendar=1430150400', u'administrator.php?ctg=calendar&view_calendar=1430236800', u'administrator.php?ctg=calendar&view_calendar=1430323200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'javascript:void(0)', u'javascript:void(0)', u'administrator.php?ctg=module&op=module_rss', u'administrator.php?ctg=module&op=module_rss', u'administrator.php?ctg=users', u'administrator.php?ctg=lessons', u'administrator.php?ctg=courses', u'administrator.php?ctg=directions', u'administrator.php?ctg=user_types', u'administrator.php?ctg=user_groups', u'administrator.php?ctg=system_config', u'administrator.php?ctg=themes&theme=2', u'administrator.php?ctg=digests', u'administrator.php?ctg=messages', u'administrator.php?ctg=logout_user', u'administrator.php?ctg=import_export', u'administrator.php?ctg=languages', u'administrator.php?ctg=statistics', u'administrator.php?ctg=backup', u'administrator.php?ctg=maintenance', u'administrator.php?ctg=forum', u'administrator.php?ctg=modules', u'administrator.php?ctg=module&op=module_chat', u'administrator.php?ctg=module&op=module_rss', u'http://www.efrontlearning.net', u'index.php?ctg=contact', u'javascript:void(0)']
-[u'/www/administrator.php?ctg=control_panel&op=search']
-[u'search_text']
+response https://app4.com/
+forms []
+[u'https://github.com/a-v-k/phpBugTracker', u'index.php', u'bug.php?op=add', u'query.php?op=query', u'query.php?op=query&form=advanced', u'report.php', u'docs/html/userguide.html', u'admin/project.php', u'query.php?op=mybugs&assignedto=1&open=1', u'query.php?op=mybugs&assignedto=1&open=0', u'query.php?op=mybugs&reportedby=1&open=1', u'query.php?op=mybugs&reportedby=1&open=0', u'query.php?op=mybugs&bookmarked=1&open=1', u'query.php?op=mybugs&bookmarked=1&open=0', u'user.php', u'logout.php', u'query.php?op=doquery&status[]=1', u'query.php?op=doquery&status[]=2', u'query.php?op=doquery&status[]=3', u'query.php?op=doquery&status[]=4', u'query.php?op=doquery&status[]=5', u'query.php?op=doquery&status[]=6', u'query.php?op=doquery&status[]=7', u'bug.php?op=add&project=1', u'bug.php?op=add&project=2', u'bug.php?op=add&project=3', u'query.php?op=doquery&projects=1&open=1&order=priority_name&sort=desc', u'query.php?op=doquery&projects=2&open=1&order=priority_name&sort=desc', u'query.php?op=doquery&projects=3&open=1&order=priority_name&sort=desc']
+[u'bug.php', u'/index.php']
+[u'bugid']
 []
-[u'search_text']
+[u'bugid']
 ssssssss
-dsds /www/administrator.php
-dsds javascript:void(0)
-dsds userpage.php?ctg=personal&user=admin
-dsds index.php?logout=true
-response https://app5.com//www/administrator.php
-response https://app5.com/www/administrator.php?ctg=personal&user=admin&op=dashboard
-forms [u"location='/www/administrator.php?ctg=personal&user=admin&op=dashboard'", u"location='/www/administrator.php?ctg=personal&user=admin&op=profile'"]
-[u'/www/administrator.php', u'javascript:void(0)', u'userpage.php?ctg=personal&user=admin', u'index.php?logout=true', u'/www/administrator.php?ctg=control_panel', u'/www/administrator.php?ctg=users', u'/www/administrator.php?ctg=personal&user=admin', u'/www/administrator.php?ctg=personal&user=admin&op=dashboard', u'administrator.php?ctg=personal&user=admin&op=dashboard', u'administrator.php?ctg=personal&user=admin&op=dashboard', u'administrator.php?ctg=personal&user=admin&op=profile', u'administrator.php?ctg=personal&user=admin&op=profile', u'/www/administrator.php?ctg=control_panel', u'administrator.php?ctg=calendar&add=1&view_calendar=1429113600&popup=1', u'administrator.php?ctg=calendar', u'administrator.php?ctg=calendar', u'administrator.php?ctg=calendar&view_calendar=1425139200', u'administrator.php?ctg=calendar&view_calendar=1430409600', u'administrator.php?ctg=calendar&view_calendar=1396281600', u'administrator.php?ctg=calendar&view_calendar=1459440000', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427817600', u'administrator.php?ctg=calendar&view_calendar=1427904000', u'administrator.php?ctg=calendar&view_calendar=1427990400', u'administrator.php?ctg=calendar&view_calendar=1428076800', u'administrator.php?ctg=calendar&view_calendar=1428163200', u'administrator.php?ctg=calendar&view_calendar=1428249600', u'administrator.php?ctg=calendar&view_calendar=1428336000', u'administrator.php?ctg=calendar&view_calendar=1428422400', u'administrator.php?ctg=calendar&view_calendar=1428508800', u'administrator.php?ctg=calendar&view_calendar=1428595200', u'administrator.php?ctg=calendar&view_calendar=1428681600', u'administrator.php?ctg=calendar&view_calendar=1428768000', u'administrator.php?ctg=calendar&view_calendar=1428854400', u'administrator.php?ctg=calendar&view_calendar=1428940800', u'administrator.php?ctg=calendar&view_calendar=1429027200', u'administrator.php?ctg=calendar&view_calendar=1429113600', u'administrator.php?ctg=calendar&view_calendar=1429200000', u'administrator.php?ctg=calendar&view_calendar=1429286400', u'administrator.php?ctg=calendar&view_calendar=1429372800', u'administrator.php?ctg=calendar&view_calendar=1429459200', u'administrator.php?ctg=calendar&view_calendar=1429545600', u'administrator.php?ctg=calendar&view_calendar=1429632000', u'administrator.php?ctg=calendar&view_calendar=1429718400', u'administrator.php?ctg=calendar&view_calendar=1429804800', u'administrator.php?ctg=calendar&view_calendar=1429891200', u'administrator.php?ctg=calendar&view_calendar=1429977600', u'administrator.php?ctg=calendar&view_calendar=1430064000', u'administrator.php?ctg=calendar&view_calendar=1430150400', u'administrator.php?ctg=calendar&view_calendar=1430236800', u'administrator.php?ctg=calendar&view_calendar=1430323200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=calendar&view_calendar=1427731200', u'administrator.php?ctg=forum', u'administrator.php?ctg=forum', u'administrator.php?ctg=messages', u'http://www.efrontlearning.net', u'index.php?ctg=contact', u'javascript:void(0)']
-[u'/www/administrator.php?ctg=control_panel&op=search']
-[u'search_text']
-[]
-[u'search_text']
-ssssssss
-dsds /www/administrator.php
-dsds javascript:void(0)
-dsds userpage.php?ctg=personal&user=admin
-dsds index.php?logout=true
-dsds /www/administrator.php?ctg=control_panel
-dsds /www/administrator.php?ctg=users
-dsds /www/administrator.php?ctg=personal&user=admin
-dsds /www/administrator.php?ctg=personal&user=admin&op=dashboard
-dsds administrator.php?ctg=personal&user=admin&op=dashboard
-dsds administrator.php?ctg=personal&user=admin&op=dashboard
-dsds administrator.php?ctg=personal&user=admin&op=profile
-dsds administrator.php?ctg=personal&user=admin&op=profile
-dsds /www/administrator.php?ctg=control_panel
-dsds administrator.php?ctg=calendar&add=1&view_calendar=1429113600&popup=1
-dsds administrator.php?ctg=calendar
-dsds administrator.php?ctg=calendar
-dsds administrator.php?ctg=calendar&view_calendar=1425139200
-dsds administrator.php?ctg=calendar&view_calendar=1430409600
-dsds administrator.php?ctg=calendar&view_calendar=1396281600
-dsds administrator.php?ctg=calendar&view_calendar=1459440000
-dsds administrator.php?ctg=calendar&view_calendar=1427731200
-dsds administrator.php?ctg=calendar&view_calendar=1427731200
-dsds administrator.php?ctg=calendar&view_calendar=1427817600
-dsds administrator.php?ctg=calendar&view_calendar=1427904000
-dsds administrator.php?ctg=calendar&view_calendar=1427990400
-dsds administrator.php?ctg=calendar&view_calendar=1428076800
-dsds administrator.php?ctg=calendar&view_calendar=1428163200
-dsds administrator.php?ctg=calendar&view_calendar=1428249600
-dsds administrator.php?ctg=calendar&view_calendar=1428336000
-dsds administrator.php?ctg=calendar&view_calendar=1428422400
-dsds administrator.php?ctg=calendar&view_calendar=1428508800
-dsds administrator.php?ctg=calendar&view_calendar=1428595200
-dsds administrator.php?ctg=calendar&view_calendar=1428681600
-dsds administrator.php?ctg=calendar&view_calendar=1428768000
-dsds administrator.php?ctg=calendar&view_calendar=1428854400
-dsds administrator.php?ctg=calendar&view_calendar=1428940800
-dsds administrator.php?ctg=calendar&view_calendar=1429027200
-dsds administrator.php?ctg=calendar&view_calendar=1429113600
-dsds administrator.php?ctg=calendar&view_calendar=1429200000
-dsds administrator.php?ctg=calendar&view_calendar=1429286400
-dsds administrator.php?ctg=calendar&view_calendar=1429372800
-dsds administrator.php?ctg=calendar&view_calendar=1429459200
-dsds administrator.php?ctg=calendar&view_calendar=1429545600
-dsds administrator.php?ctg=calendar&view_calendar=1429632000
-dsds administrator.php?ctg=calendar&view_calendar=1429718400
-dsds administrator.php?ctg=calendar&view_calendar=1429804800
-dsds administrator.php?ctg=calendar&view_calendar=1429891200
-dsds administrator.php?ctg=calendar&view_calendar=1429977600
-dsds administrator.php?ctg=calendar&view_calendar=1430064000
-dsds administrator.php?ctg=calendar&view_calendar=1430150400
-dsds administrator.php?ctg=calendar&view_calendar=1430236800
-dsds administrator.php?ctg=calendar&view_calendar=1430323200
-dsds administrator.php?ctg=calendar&view_calendar=1427731200
-dsds administrator.php?ctg=calendar&view_calendar=1427731200
-dsds administrator.php?ctg=calendar&view_calendar=1427731200
-dsds administrator.php?ctg=forum
-dsds administrator.php?ctg=forum
-dsds administrator.php?ctg=messages
-dsds http://www.efrontlearning.net
-dsds index.php?ctg=contact
-dsds javascript:void(0)
-sssssddddd /www/administrator.php?ctg=control_panel&op=search
-qwqw location='/www/administrator.php?ctg=personal&user=admin&op=dashboard'
-bvbvbv /www/administrator.php?ctg=personal&user=admin&op=dashboard
-qwqw location='/www/administrator.php?ctg=personal&user=admin&op=profile'
-bvbvbv /www/administrator.php?ctg=personal&user=admin&op=profile
-[{'url': 'https://app5.com//www/administrator.php', 'method': '', 'param': []}, {'url': 'https://app5.com/www/javascript:void(0)', 'method': '', 'param': []}, {'url': 'https://app5.com/www/userpage.php?ctg=personal&user=admin', 'method': '', 'param': []}, {'url': 'https://app5.com/www/index.php?logout=true', 'method': '', 'param': []}, {'url': 'https://app5.com//www/administrator.php?ctg=control_panel', 'method': '', 'param': []}, {'url': 'https://app5.com//www/administrator.php?ctg=users', 'method': '', 'param': []}, {'url': 'https://app5.com//www/administrator.php?ctg=personal&user=admin', 'method': '', 'param': []}, {'url': 'https://app5.com//www/administrator.php?ctg=personal&user=admin&op=dashboard', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=personal&user=admin&op=dashboard', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=personal&user=admin&op=profile', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&add=1&view_calendar=1429113600&popup=1', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1425139200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430409600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1396281600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1459440000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427731200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427817600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427904000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427990400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428076800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428163200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428249600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428336000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428422400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428508800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428595200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428681600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428768000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428854400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428940800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429027200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429113600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429200000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429286400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429372800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429459200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429545600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429632000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429718400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429804800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429891200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429977600', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430064000', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430150400', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430236800', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430323200', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=forum', 'method': '', 'param': []}, {'url': 'https://app5.com/www/administrator.php?ctg=messages', 'method': '', 'param': []}, {'url': 'http://www.efrontlearning.net', 'method': '', 'param': []}, {'url': 'https://app5.com//www/administrator.php?ctg=personal&user=admin&op=profile', 'method': '', 'param': [u'search_text']}, {'url': 'https://app5.com//www/administrator.php?ctg=personal&user=admin&op=profile', 'method': '', 'param': [u'search_text']}, {'url': 'https://app5.com//www/administrator.php?ctg=personal&user=admin&op=profile', 'method': '', 'param': [u'search_text']}]
-response https://app5.com//www/administrator.php?ctg=users
-response https://app5.com//www/administrator.php?ctg=control_panel
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427990400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428508800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427904000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427817600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1427731200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428163200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428249600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428076800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428422400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428336000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1459440000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1396281600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430409600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1425139200
-response https://app5.com//www/administrator.php?ctg=personal&user=admin&op=profile
-response https://app5.com//www/administrator.php?ctg=control_panel&op=search
-response https://app5.com/www/index.php?ctg=contact
-response https://app5.com/www/administrator.php?ctg=messages
-response https://app5.com/www/administrator.php?ctg=forum
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430323200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430236800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430150400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1430064000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429977600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429891200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429804800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429718400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429632000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429545600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429459200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429372800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429286400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429200000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429113600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1429027200
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428940800
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428854400
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428768000
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428681600
-response https://app5.com/www/administrator.php?ctg=calendar&view_calendar=1428595200
-response https://app5.com/www/administrator.php?ctg=calendar
-response https://app5.com/www/administrator.php?ctg=calendar&add=1&view_calendar=1429113600&popup=1
-response https://app5.com/www/administrator.php?ctg=personal&user=admin&op=profile
-response https://app5.com//www/administrator.php?ctg=personal&user=admin&op=dashboard
+dsds https://github.com/a-v-k/phpBugTracker
+dsds index.php
+dsds bug.php?op=add
+dsds query.php?op=query
+dsds query.php?op=query&form=advanced
+dsds report.php
+dsds docs/html/userguide.html
+dsds admin/project.php
+dsds query.php?op=mybugs&assignedto=1&open=1
+dsds query.php?op=mybugs&assignedto=1&open=0
+dsds query.php?op=mybugs&reportedby=1&open=1
+dsds query.php?op=mybugs&reportedby=1&open=0
+dsds query.php?op=mybugs&bookmarked=1&open=1
+dsds query.php?op=mybugs&bookmarked=1&open=0
+dsds user.php
+dsds logout.php
+response https://app4.com/user.php
+response https://app4.com/docs/html/userguide.html
+response https://app4.com/report.php
+response https://app4.com/query.php?op=query&form=advanced
+response https://app4.com/query.php?op=query
+response https://app4.com/query.php?op=mybugs&reportedby=1&open=1
+response https://app4.com/query.php?op=mybugs&reportedby=1&open=0
+response https://app4.com/query.php?op=mybugs&assignedto=1&open=1
+response https://app4.com/query.php?op=mybugs&assignedto=1&open=0
+response https://app4.com/admin/project.php
+response https://app4.com/bug.php?op=add
+response https://app4.com/query.php?op=mybugs&bookmarked=1&open=0
+response https://app4.com/index.php
+response https://app4.com/query.php?op=mybugs&bookmarked=1&open=1
