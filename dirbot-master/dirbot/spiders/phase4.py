@@ -61,10 +61,32 @@ def login(driver,uname,passwd,loginURL,usernameID,passwdID):
 # attack if the method is post
 def	postAttack(driver,url,fieldID,fieldValue,buttonID):
 	driver.get(url)
-	fieldIDele = driver.find_element_by_name(fieldID)
+	if (len(driver.find_elements_by_name(fieldID)) > 0):
+		fieldIDele = driver.find_element_by_name(fieldID)
+	elif (len(driver.find_elements_by_id(fieldID)) > 0):
+		fieldIDele = driver.find_element_by_id(fieldID)
 	fieldIDele.send_keys(fieldValue)
-	buttonEle = driver.find_element_by_name(buttonID)
-	buttonEle.click()
+
+	#if button id is not found then search using the input tag name
+	if (buttonID is None):
+		inp_elems = driver.find_elements_by_tag_name('input')
+		for i in inp_elems:
+			if (((i.get_attribute('type') == 'button') or (i.get_attribute('type') == 'submit'))):
+				i.click()
+				url2= driver.current_url
+				#to verify is login is successful or not,
+				#we wil verify if the username is available somewhere on the webpage
+				if(url2 == url):
+					print "login attempt failed"
+				else:
+					driver.get(url2)
+					print "login successful"
+					return "true"
+		return "false"""
+	else:
+		buttonEle = driver.find_elements_by_tag_name(buttonID)
+		buttonEle.click()
+	
 
 
 
@@ -107,9 +129,9 @@ for key,value in data2.iteritems():
 			#login successful, now use the attack url
 			if(method == "POST"):
 				fieldID = keyValues.get("fieldID")
-				fieldVal = keyValues.get("fieldValue",None)
+				fieldVal = keyValues.get("fieldVal",None)
 				buttonID = keyValues.get("buttonID",None)
-				postAttack(driver,url1,fieldID,fieldValue,buttonID)
+				postAttack(driver,url1,fieldID,fieldVal,buttonID)
 			else:
 				driver.get(url1)
 		else:
@@ -137,9 +159,9 @@ for key,value in data2.iteritems():
 			methodVal = keyValues.get("method","GET")
 			if(methodVal == "POST"):
 				fieldID = keyValues.get("fieldID")
-				fieldVal = keyValues.get("fieldValue",None)
+				fieldVal = keyValues.get("fieldVal",None)
 				buttonID = keyValues.get("buttonID",None)
-				postAttack(driver,url,fieldID,fieldValue,buttonID)
+				postAttack(driver2,url1,fieldID,fieldVal,buttonID)
 			else:
 				driver2.get(url1)
 
