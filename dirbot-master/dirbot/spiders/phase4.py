@@ -16,28 +16,19 @@ def getKeyValue(params,keyValues):
 
 
 #find the login url from url1
-def findLoginURL(urlDomain,totalList,loginURL):
+def findLoginURL(urlDomain,totalList):
 	urlDict = totalList[0]
 	for key,value in urlDict.iteritems():
 		if (urlDomain in key):
-			#if type(value) is list:
-			#getKeyValue(value,keyValues)
-			print "found\n"
-			print urlDomain
-			print key
-			loginURL = key
-			break;
-		else:
-			print "not found"
-			print key
-			print urlDomain
-			#keyValues[key]=value
-
+			if type(value) is list:
+				tempList = value[0]
+				loginURL = tempList.get("loginURL",key)
+				return loginURL;
 
 #login function
-def login(driver,username,passwd,loginURL,usernameID,passwdID):
+def login(driver,uname,passwd,loginURL,usernameID,passwdID):
 		driver.get(loginURL)
-
+		
 		if (len(driver.find_elements_by_name(usernameID)) > 0):
 			nameele = driver.find_element_by_name(usernameID)
 		elif (len(driver.find_elements_by_id(usernameID)) > 0):
@@ -97,8 +88,7 @@ for key,value in data2.iteritems():
 	urlDomain = url1[url1.find("//"):]
 	urlDomain = urlDomain[2:]
 	urlDomain = urlDomain[:urlDomain.find("/")]
-	loginURL = None
-	findLoginURL(urlDomain,urlList,loginURL)
+	loginURL = findLoginURL(urlDomain,urlList)
 
 	# check if attack is using a url only,no login required 
 	loginCheck = keyValues.get("LoginRequired","false")
@@ -111,7 +101,6 @@ for key,value in data2.iteritems():
 	# loginRequired = true then login and load the url
 	# two urls required -> one for login and other as the attack
 	if (loginCheck == "true"):
-	  	print "true loginCheck"
 	  	driver = webdriver.Firefox()
 	  	loginStatus = login(driver,uname,passwd,loginURL,usernameID,passwdID)
 	  	if(loginStatus == "true"):
@@ -122,7 +111,7 @@ for key,value in data2.iteritems():
 				buttonID = keyValues.get("buttonID",None)
 				postAttack(driver,url1,fieldID,fieldValue,buttonID)
 			else:
-				driver.get(attack_url)
+				driver.get(url1)
 		else:
 			#login failed. Exit!
 			scr = "alert('login failed');"
@@ -131,7 +120,6 @@ for key,value in data2.iteritems():
 	# 1) Login attack
 	# 2) No login, only attack by the url
 	else:
-		print "false loginCheck"
 		if(uname or passwd):
 			driver1 = webdriver.Firefox()
 		  	loginStatus = login(driver1,uname,passwd,loginURL,usernameID,passwdID)
