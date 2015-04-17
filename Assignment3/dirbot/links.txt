@@ -1,0 +1,4 @@
+https://app4.com/admin/status.php?op=edit&use_js=1&status_id=1
+https://app4.com/admin/project.php?op=edit_component&id=1
+https://app4.com/admin/resolution.php?op=edit&resolution_id=1
+https://app4.com/admin/severity.php?op=edit&severity_id=1
