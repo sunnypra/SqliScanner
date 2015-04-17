@@ -1,0 +1,2084 @@
+[
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://github.com/a-v-k/phpBugTracker"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/index.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/bug.php?op=add"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=query"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=query&form=advanced"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/report.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/userguide.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/user.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/logout.php"
+    }, 
+    {
+        "method": "", 
+        "param": [
+            "bugid", 
+            "def_results", 
+            "pass1", 
+            "pass2"
+        ], 
+        "url": "https://app4.com/bug.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/index.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/bugsearch.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/userguide.html#PRIMER"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/userguide.html#CREATEACCOUNT"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/userguide.html#ENTERBUG"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/bugdetail.html"
+    }, 
+    {
+        "method": "", 
+        "param": [
+            "bugid", 
+            "start_date", 
+            "end_date", 
+            "closed_start_date", 
+            "closed_end_date", 
+            "savedqueryname"
+        ], 
+        "url": "https://app4.com/query.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=edit"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/bug.php?op=add&project=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/bug.php?op=add&project=2"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/bug.php?op=add&project=3"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=doquery&projects=1&open=1&order=priority_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=doquery&projects=2&open=1&order=priority_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?op=doquery&projects=3&open=1&order=priority_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/configure.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=list-roles"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=add"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=project_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=created_date&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=active&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit&id=3"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit&id=2"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit&id=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "javascript:history.go(-1)"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/adminguide.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/adminguide.html#REQUIREMENTS"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/installation.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/configuration.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/devguide.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/devguide.html#MANIFEST"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/devstandards.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/schema.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://smarty.php.net/"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&reportedby=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&assignedto=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://php.net/manual/en/html/function.require-once.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://php.net/manual/en/html/function.include-once.html"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/devstandards.html#DEVSTANDARDS-CODE"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/docs/html/devstandards.html#OTHERCONVENTIONS"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://www.sourceforge.net/projects/phpbt/"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://www.aditus.nu/jpgraph/"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://www.php.net/manual/function.date.php"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_version&project_id=1&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_component&project_id=1&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_version&project_id=2&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_component&project_id=2&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_version&project_id=3&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?op=edit_component&project_id=3&id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=active&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=created_date&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/project.php?order=project_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php?op=edit&site_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php?order=site_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php?order=sort_order&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php?op=edit&database_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php?order=database_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php?order=sort_order&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?op=edit&os_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=os_name&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=regex&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=sort_order&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=priority_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=priority_desc&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=sort_order&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=del&priority_id=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=2"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=del&priority_id=2"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=3"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=del&priority_id=3"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=4"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=del&priority_id=4"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=edit&priority_id=5"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?op=del&priority_id=5"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?op=edit&severity_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=severity_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=severity_desc&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=sort_order&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?op=edit&resolution_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=resolution_name&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=resolution_desc&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=sort_order&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?op=edit&status_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=status_name&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=status_desc&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=sort_order&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?op=edit&status_id=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?order=group_name&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?order=4&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit-role&group_id=8"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit-role&group_id=5"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit-role&group_id=9"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit-role&group_id=7"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit-role&group_id=6"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit&group_id=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit&group_id=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?op=edit&group_id=2"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?op=edit&user_id=0&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=login&sort=desc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=last_name&sort=asc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=created_date&sort=asc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=active&sort=asc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?op=edit&user_id=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?op=edit&user_id=3&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?op=edit&user_id=2&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?op=edit&user_id=4&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "http://www.php.net/date"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=sort_order&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=regex&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=sort_order&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=severity_desc&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/severity.php?order=severity_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=login&sort=asc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=active&sort=desc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=created_date&sort=desc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/user.php?order=last_name&sort=desc&page=1&userfilter=0&groupfilter=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=doquery&projects=3&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?order=group_name&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/group.php?order=4&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=sort_order&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=status_desc&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/status.php?order=status_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=sort_order&sort=asc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=resolution_desc&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/resolution.php?order=resolution_name&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=sort_order&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=priority_desc&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/priority.php?order=priority_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/os.php?order=os_name&sort=desc&page=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php?order=sort_order&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/database.php?order=database_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php?order=sort_order&sort=asc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/admin/site.php?order=site_name&sort=desc"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=doquery&projects=1&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=mybugs&bookmarked=1&open=0"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=doquery&status[]=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=status_name&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=priority_name&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=resolution_name&sort=asc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=severity_name&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=owner&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=reporter&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=title&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }, 
+    {
+        "method": "", 
+        "param": [], 
+        "url": "https://app4.com/query.php?order=bug_id&sort=desc&page=1&page=1&op=doquery&projects=2&open=1"
+    }
+]
