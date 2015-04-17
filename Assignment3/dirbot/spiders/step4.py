@@ -82,7 +82,7 @@ def	postAttack(driver,url,fieldID,fieldValue,buttonID):
 					driver.get(url2)
 					print "login successful"
 					return "true"
-		return "false"""
+		return "false"
 	else:
 		buttonEle = driver.find_elements_by_tag_name(buttonID)
 		buttonEle.click()
