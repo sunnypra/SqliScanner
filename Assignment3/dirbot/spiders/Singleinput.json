@@ -1,12 +1,12 @@
 [
     {
-        "http://app4.com": [
+        "http://app1.com/": [
             {
-                "loginurl": "https://app4.com", 
+                "loginurl": "http://app1.com/users/login.php", 
                 "params": [
                     {
-                        "username": "admin@admin.com", 
-                        "password": "admin"
+                        "username": "", 
+                        "password": ""
                     }
                 ]
             }

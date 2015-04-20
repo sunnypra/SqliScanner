@@ -17,42 +17,13 @@ from scrapy.utils.response import get_base_url
 import json
 
 class DmozSpider(Spider):
-    name = "Group5"
-    allowed_domains = [
-        "app5.com"
-      ]
-    sta =[
-          "https://app5.com/"
-          ,"https://app5.com/"]
-    credentials = {
-        "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
-        "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
-        "http://192.168.56.106/index.php/customer/account/login/":['student@student.com','student'], #magneto
-        "http://192.168.56.101/profile.php?action=login": ['student@student.com','student'], #Astrospaces
-        "http://192.168.56.102/CubeCart/index.php?_a=login" : ['student@student.com','student'], #Cubecart
-        "http://192.168.56.103/dokeos/index.php":['student','student'], #Dokeos
-        "http://192.168.56.104/efront/www/index.php?":['student','student'], #eFront
-        "http://192.168.56.105/elgg/":['student','student'], #Elgg
-        "http://192.168.56.107/owncloud/":['student','student'], #owncloud
-        "http://192.168.56.108/index.php?route=account/login":['student@student.com','student'], #opencart
-        "http://192.168.56.109/index.php/site/login":['student','student'], #x2crm
-        "http://192.168.56.110/src/login.php":['student','student'], #squirrelmail
-        "http://192.168.56.101/catalog/login.php":['student@student.com','student'], #osCommerce
-        "http://192.168.56.103/piwigo-2.0.0/identification.php":['student','student'], #Piwigo
-        "http://192.168.56.102/login.php":['student','student'], #Phorum
-        "http://192.168.56.109/prestashop/authentication.php":['student@student.com','student'], #PrestaShop
-        "http://192.168.56.106/cpg/login.php?referer=index.php":['student','student'] #Gallery
-    }
+    name = "step1"
+    allowed_domains = []
+    sta =[]
+    start_urls = []
+    login_user ="" 
+    login_pass ="" 
 
-    start_urls = [
-                  "https://app5.com/www/index.php"
-                  #"https://app1.com/users/login.php"
-                  #"https://app5.com/www/index.php"
-        #"https://app1.com/users/login.php"
-#         "https://app1.com",
-#         "http://app4.com",
-#         "http://app5.com",
-                    ]
     dic={}
     fin = []
     urllis =[]
@@ -60,25 +31,12 @@ class DmozSpider(Spider):
     #obj.write("{")
     def parse(self,response):
         print "Status:",response.status
-        main_file = open("Singleinput.json",'r')
-        infoList = json.load(main_file)
-        start_urls =  infoList.get("starturl")
-        login_url = infoList.get("loginurl")
-        login_user = infoList.get("username")
-        login_pass = infoList.get("password")
-        urlDomain = login_url[login_url.find("//"):]
-        urlDomain = urlDomain[2:]
-        if (urlDomain.find("/") != -1):
-            allowed_domains = urlDomain[0:urlDomain.find("/")]
-        else:
-            allowed_domains = urlDomain
-
-        args, url, method = fill_login_form(response.url, response.body, login_user, login_pass)
+        #args, url, method = fill_login_form(response.url, response.body, self.login_user, self.login_pass)
         #print "args",args
         #self.firstloginscrape()
         #yield FormRequest(start_urls[0], method=method, formdata=args,dont_filter=True,callback=self.firstpagescrape)
         #yield FormRequest(self.start_urls[0], meta={'url':self.start_urls[0]},callback=self.firstpagescrape)
-        yield FormRequest(response.url, method=method, formdata=args,dont_filter=True,callback=self.after_login)
+        yield FormRequest( self.start_urls[0],callback=self.parse1)
 
         """
         if name:
@@ -88,6 +46,22 @@ class DmozSpider(Spider):
         """
 
     def __init__(self):
+        main_file = open("Singleinput.json",'r')
+        infoList1 = json.load(main_file)
+        infoList = infoList1[0]
+        for key,value in infoList.iteritems():
+            self.start_urls =  [str(key)]
+            self.sta = self.start_urls
+            self.login_url = [value[0].get("loginurl")]
+            #self.login_user = value[0].get("params")[0].get("username")
+            #self.login_pass = value[0].get("params")[0].get("password")
+            urlDomain = self.login_url[0][self.login_url[0].find("//"):]
+            urlDomain = urlDomain[2:]
+            if (urlDomain.find("/") != -1):
+                self.allowed_domains = [urlDomain[0:urlDomain.find("/")]]
+            else:
+                self.allowed_domains = [urlDomain]
+      
         dispatcher.connect(self.spider_closed, signals.spider_closed)
 
     def after_login(self, response):
