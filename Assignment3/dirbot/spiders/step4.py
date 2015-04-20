@@ -22,7 +22,7 @@ def findLoginURL(urlDomain,totalList):
 		if (urlDomain in key):
 			if type(value) is list:
 				tempList = value[0]
-				loginURL = tempList.get("loginURL",key)
+				loginURL = tempList.get("loginurl",key)
 				return loginURL;
 
 #login function
@@ -82,7 +82,7 @@ def	postAttack(driver,url,fieldID,fieldValue,buttonID):
 					driver.get(url2)
 					print "login successful"
 					return "true"
-		return "false"""
+		return "false"
 	else:
 		buttonEle = driver.find_elements_by_tag_name(buttonID)
 		buttonEle.click()
@@ -91,13 +91,13 @@ def	postAttack(driver,url,fieldID,fieldValue,buttonID):
 
 
 #MAIN PROCESSSING
-temp_file = open("Step3output.json",'r')
+temp_file = open("step3output.json",'r')
 data = json.load(temp_file)
 data2 = data[0]
 keyValues = {}
 
 #Load main file to get login url
-main_file = open("LoginData.json",'r')
+main_file = open("input.json",'r')
 urlList = json.load(main_file)
 
 # try possible attacks in json file
