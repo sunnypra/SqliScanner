@@ -17,7 +17,7 @@ from scrapy.utils.response import get_base_url
 import json
 
 class DmozSpider(Spider):
-    name = "sqli44"
+    name = "Group5"
     allowed_domains = [
         "app5.com"
       ]

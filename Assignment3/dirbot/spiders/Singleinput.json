@@ -1,10 +1,15 @@
-[{
-	"http://app4.com": [{
-		"loginurl": "https://app4.com",
-		"params": 
-			[{
-			"username": "admin@admin.com",
-			"password": "admin"
-			}]
-	}]
-}]
+[
+    {
+        "http://app4.com": [
+            {
+                "loginurl": "https://app4.com", 
+                "params": [
+                    {
+                        "username": "admin@admin.com", 
+                        "password": "admin"
+                    }
+                ]
+            }
+        ]
+    }
+]

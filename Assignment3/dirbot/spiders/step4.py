@@ -97,7 +97,7 @@ data2 = data[0]
 keyValues = {}
 
 #Load main file to get login url
-main_file = open("input.json",'r')
+main_file = open("Singleinput.json",'r')
 urlList = json.load(main_file)
 
 # try possible attacks in json file

@@ -1,4 +1,4 @@
-"""from scrapy.spider import Spider
+from scrapy.spider import Spider
 from scrapy.selector import Selector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -33,7 +33,7 @@ searchterms = ["mysql error","sql syntax", "mysql server version", "unknown colu
 
 class step3(Spider):
 	name = "step3"
-	with open('input.json') as data_file:
+	with open('Singleinput.json') as data_file:
 		data = json.load(data_file)
 	start_urls = [data['starturl']]
 	login_urls = [data['loginurl']]
@@ -201,4 +201,4 @@ class step3(Spider):
 		f.write(json.dumps(fin,indent= 4, sort_keys = True))
 		f.close()
 		
-"""
+
