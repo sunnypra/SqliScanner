@@ -38,7 +38,7 @@ links.close()
 links = open('linksToAttack.txt', 'r')
 urls = links.readlines()
 links.close()
-##print urls
+#print urls
 login_reqd = "false"
 items = []
 fin = {}
@@ -56,6 +56,8 @@ class step3(Spider):
 	login_user = [data['username']]
 	login_pass = [data['password']]
 	params = []
+	loginid = ""
+	passid = ""
 	
 	def parse(self, response):
 		for temp in urls:
@@ -65,11 +67,13 @@ class step3(Spider):
 		#print response
 		args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[0], self.login_pass[0])
 		#print args
-		login = "true"
-		#for x in query_string.split('&'):
-			#y = x.split('=')
-			#self.params.append((y[0], y[1]))
-		
+		login_reqd = "true"
+		for a in args:
+			if a[1] == self.login_user[0]:
+				self.loginid = a[0]
+			if a[1] == self.login_pass[0]:
+				self.passid = a[0]
+		print "IDs: " + self.loginid + ", " + self.passid
 		yield FormRequest(url, method=method, formdata=args, callback=self.after_login)
 		return
 
@@ -179,6 +183,8 @@ class step3(Spider):
 				dic1["LoginRequired"] = login_reqd
 				dic1["username"] = self.login_user[0]
 				dic1["password"] = self.login_pass[0]
+				dic1["loginid"] = self.loginid
+				dic1["passid"] = self.passid
 				#OtherParameterToWrite #Pending
 				dic[response.url] = [dic1]
 		temp = response.request.meta['temp']
