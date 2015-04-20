@@ -18,42 +18,16 @@ import json
 
 class DmozSpider(Spider):
     name = "Group5"
-    allowed_domains = [
-        "app4.com"
-      ]
     sta =[
-          "https://app4.com/"
-          ,"https://app4.com/"]
-    credentials = {
-        "http://zencart.com/index.php?main_page=login":['student@student.com','student'], #zencart
-        "http://192.168.56.102/phpScheduleIt/":['student@email.com','student'], #phpscheduleit
-        "http://192.168.56.106/index.php/customer/account/login/":['student@student.com','student'], #magneto
-        "http://192.168.56.101/profile.php?action=login": ['student@student.com','student'], #Astrospaces
-        "http://192.168.56.102/CubeCart/index.php?_a=login" : ['student@student.com','student'], #Cubecart
-        "http://192.168.56.103/dokeos/index.php":['student','student'], #Dokeos
-        "http://192.168.56.104/efront/www/index.php?":['student','student'], #eFront
-        "http://192.168.56.105/elgg/":['student','student'], #Elgg
-        "http://192.168.56.107/owncloud/":['student','student'], #owncloud
-        "http://192.168.56.108/index.php?route=account/login":['student@student.com','student'], #opencart
-        "http://192.168.56.109/index.php/site/login":['student','student'], #x2crm
-        "http://192.168.56.110/src/login.php":['student','student'], #squirrelmail
-        "http://192.168.56.101/catalog/login.php":['student@student.com','student'], #osCommerce
-        "http://192.168.56.103/piwigo-2.0.0/identification.php":['student','student'], #Piwigo
-        "http://192.168.56.102/login.php":['student','student'], #Phorum
-        "http://192.168.56.109/prestashop/authentication.php":['student@student.com','student'], #PrestaShop
-        "http://192.168.56.106/cpg/login.php?referer=index.php":['student','student'] #Gallery
-    }
-    
-    start_urls = [
-                  "http://app4.com"
-                    ]
+          "https://app4.com/"]
+
     dic={}
     fin = []
     urllis =[]
     #obj = open('data.json', 'wb')
     #obj.write("{")
     def parse(self,response):
-        main_file = open("input.json",'r')
+        main_file = open("Singleinput.json",'r')
         infoList = json.load(main_file)
         start_urls =  infoList.get("starturl")
         login_url = infoList.get("loginurl")

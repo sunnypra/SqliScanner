@@ -1,4 +1,4 @@
-from scrapy.spider import Spider
+"""from scrapy.spider import Spider
 from scrapy.selector import Selector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -201,3 +201,4 @@ class step3(Spider):
 		f.write(json.dumps(fin,indent= 4, sort_keys = True))
 		f.close()
 		
+"""

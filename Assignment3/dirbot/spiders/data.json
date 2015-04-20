@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "method": "", 
@@ -2074,3 +2075,6 @@
         "url": "https://app4.com/admin/severity.php?order=severity_desc&sort=desc"
     }
 ]
+=======
+[]
+>>>>>>> 28270c2b74375fb747913e59b45ca358dc42c372

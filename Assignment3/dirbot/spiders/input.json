@@ -1,6 +1,42 @@
-{
-  "loginurl" : "https://app4.com",
-  "starturl" : "https://app4.com",
-  "username" : "admin@admin.com",
-  "password" : "admin"
-}
+[{
+	"http://app4.com": [{
+		"loginurl": "https://app4.com",
+		"params": 
+			[{
+			"username": "admin@admin.com",
+			"password": "admin"
+			}]
+	}],
+	"http://app5.com": [{
+		"loginurl": "https://app5.com",
+		"params": 
+			[{
+			"username": "student",
+			"password": "student"
+			}]
+	},
+	{
+		"loginurl": "https://app5.com",
+		"params": 
+			[{
+			"username": "professor",
+			"password": "professor"
+			}]
+	},
+	{
+		"loginurl": "https://app5.com",
+		"params": 
+			[{
+			"username": "admin",
+			"password": "admin"
+			}]
+	}],
+	"http://app1.com": [{
+		"loginurl": "https://app1.com/users/login.php",
+		"params": 
+			[{
+			"username": "",
+			"password": ""
+			}]
+	}]
+}]
