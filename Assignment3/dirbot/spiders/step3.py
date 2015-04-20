@@ -39,7 +39,6 @@ links = open('linksToAttack.txt', 'r')
 urls = links.readlines()
 links.close()
 #print urls
-login_reqd = "false"
 items = []
 fin = {}
 dic = {}
@@ -58,6 +57,7 @@ class step3(Spider):
 	params = []
 	loginid = ""
 	passid = ""
+	login_reqd = "false"
 	
 	def parse(self, response):
 		for temp in urls:
@@ -67,7 +67,7 @@ class step3(Spider):
 		#print response
 		args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[0], self.login_pass[0])
 		#print args
-		login_reqd = "true"
+		self.login_reqd = "true"
 		for a in args:
 			if a[1] == self.login_user[0]:
 				self.loginid = a[0]
@@ -180,11 +180,12 @@ class step3(Spider):
 				file4.close()
 				dic1 ={}
 				dic1["method"] = "GET" #Pending
-				dic1["LoginRequired"] = login_reqd
+				dic1["LoginRequired"] = self.login_reqd
 				dic1["username"] = self.login_user[0]
 				dic1["password"] = self.login_pass[0]
 				dic1["loginid"] = self.loginid
 				dic1["passid"] = self.passid
+				print dic1["LoginRequired"]
 				#OtherParameterToWrite #Pending
 				dic[response.url] = [dic1]
 		temp = response.request.meta['temp']
