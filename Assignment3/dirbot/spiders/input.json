@@ -1,6 +1,6 @@
 [{
 	"http://app4.com": [{
-		"loginurl": "https://app4.com",
+		"loginurl": "http://app4.com",
 		"params": 
 			[{
 			"username": "admin@admin.com",
@@ -8,23 +8,23 @@
 			}]
 	}],
 	"http://app5.com": [{
-		"loginurl": "https://app5.com",
+		"loginurl": "http://app5.com",
 		"params": 
 			[{
 			"username": "student",
 			"password": "student"
 			}]
-	},
-	{
-		"loginurl": "https://app5.com",
+	}],
+	"http://app5.com": [{
+		"loginurl": "http://app5.com",
 		"params": 
 			[{
 			"username": "professor",
 			"password": "professor"
 			}]
-	},
-	{
-		"loginurl": "https://app5.com",
+	}],
+	"http://app5.com": [{
+		"loginurl": "http://app5.com",
 		"params": 
 			[{
 			"username": "admin",
@@ -32,7 +32,7 @@
 			}]
 	}],
 	"http://app1.com": [{
-		"loginurl": "https://app1.com/users/login.php",
+		"loginurl": "http://app1.com/users/login.php",
 		"params": 
 			[{
 			"username": "",
