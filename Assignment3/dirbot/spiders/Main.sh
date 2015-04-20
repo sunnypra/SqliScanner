@@ -1,4 +1,8 @@
 #!/bin/bash
-python sqli_appfinal4.py
+#reading the file line by line till all opening and closing brackets match[{ }]
+# and writing it to another file
+
+
+python step1.py
 python step3.py
-python phase4.py
+python step4.py

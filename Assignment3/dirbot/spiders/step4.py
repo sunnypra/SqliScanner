@@ -1,4 +1,4 @@
-#!/usr/bin/python
+"""#!/usr/bin/python
 from selenium import webdriver
 import selenium.webdriver.common.keys
 import selenium.webdriver.common.alert
@@ -166,5 +166,5 @@ for key,value in data2.iteritems():
 				driver2.get(url1)
 
 
-
+"""
 
