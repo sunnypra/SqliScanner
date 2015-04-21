@@ -1,8 +1,4 @@
 #!/usr/bin/python
-from selenium import webdriver
-import selenium.webdriver.common.keys
-import selenium.webdriver.common.alert
-from selenium.webdriver.common.by import By
 import json
 
 # store all values for one url in a dictionary
@@ -26,144 +22,135 @@ def findLoginURL(urlDomain,totalList):
 				return loginURL;
 
 #login function
-def login(driver,uname,passwd,loginURL,usernameID,passwdID):
-		driver.get(loginURL)
-		
-		if (len(driver.find_elements_by_name(usernameID)) > 0):
-			nameele = driver.find_element_by_name(usernameID)
-		elif (len(driver.find_elements_by_id(usernameID)) > 0):
-			nameele = driver.find_element_by_id(usernameID)
-		nameele.send_keys(uname)
+def login(tempPyFil,uname,passwd,loginURL,usernameID,passwdID):
+	tempPyFil.write("driver.get(\""+str(loginURL)+"\")\n")
+	tempPyFil.write("if (len(driver.find_elements_by_name(\"" + str(usernameID) + "\")) > 0):\n")
+	tempPyFil.write("nameele = driver.find_element_by_name(\"" + str(usernameID) + "\")\n")
+	tempPyFil.write("elif (len(driver.find_elements_by_id(\"" + str(usernameID) + "\") > 0):\n")
+	tempPyFil.write("nameele = driver.find_element_by_id(\""+str(usernameID)+"\")\n")
+	tempPyFil.write("nameele.send_keys(\""+ str(uname) + "\")\n")
 
-		if (len(driver.find_elements_by_name(passwdID)) > 0):
-			passele = driver.find_element_by_name(passwdID)
-		elif (len(driver.find_elements_by_id(passwdID)) > 0):
-			passele = driver.find_element_by_id(passwdID)
-		passele.send_keys(passwd)
+	tempPyFil.write("if (len(driver.find_elements_by_name(\"" + str(passwdID) + "\")) > 0):\n")
+	tempPyFil.write("passele = driver.find_element_by_name(\"" + str(passwdID) + "\")\n")
+	tempPyFil.write("elif (len(driver.find_elements_by_id(\"" + str(passwdID) + "\") > 0):\n")
+	tempPyFil.write("passele = driver.find_element_by_id(\""+str(passwdID)+"\")\n")
+	tempPyFil.write("passele.send_keys(\""+ str(passwd) + "\")\n")
 
-		inp_elems = driver.find_elements_by_tag_name('input')
-		for i in inp_elems:
-			if (((i.get_attribute('type') == 'button') or (i.get_attribute('type') == 'submit')) & 
-				((i.get_attribute('value') == 'Login') or (i.get_attribute('value') == 'login'))):
-				i.click()
-				url2= driver.current_url
-				#to verify is login is successful or not,
-				#we wil verify if the username is available somewhere on the webpage
-				if(url2 == loginURL):
-					print "login attempt failed"
-				else:
-					driver.get(url2)
-					print "login successful"
-					return "true"
-		return "false"
+	tempPyFil.write("inp_elems = driver.find_elements_by_tag_name('input')\n")
+	tempPyFil.write("for i in inp_elems:\n")
+	tempPyFil.write("if (((i.get_attribute('type') == 'button') or (i.get_attribute('type') == 'submit')) &\n")
+	tempPyFil.write("((i.get_attribute('value') == 'Login') or (i.get_attribute('value') == 'login'))):\n")
+	tempPyFil.write("i.click()\n")
+	tempPyFil.write("url2= driver.current_url\n")
+
+	tempPyFil.write("if(url2 == loginURL):\n")
+	tempPyFil.write("print \"login attempt failed\"\n")
+	tempPyFil.write("else:\n")
+	tempPyFil.write("driver.get(url2)\n")
+	tempPyFil.write("print \"login successful\"\n")
+	tempPyFil.write("break\n\n")
 
 
 # attack if the method is post
-def	postAttack(driver,url,fieldID,fieldValue,buttonID):
-	driver.get(url)
-	if (len(driver.find_elements_by_name(fieldID)) > 0):
-		fieldIDele = driver.find_element_by_name(fieldID)
-	elif (len(driver.find_elements_by_id(fieldID)) > 0):
-		fieldIDele = driver.find_element_by_id(fieldID)
-	fieldIDele.send_keys(fieldValue)
+def	postAttack(tempPyFil,url,fieldID,fieldValue,buttonID):
+	tempPyFil.write("driver.get(\""+str(url)+"\")\n")
+
+	tempPyFil.write("if (len(driver.find_elements_by_name(\"" + str(fieldID) + "\")) > 0):\n")
+	tempPyFil.write("\tfieldIDele = driver.find_element_by_name(\"" + str(fieldID) + "\")\n")
+	tempPyFil.write("elif (len(driver.find_elements_by_id(\"" + str(fieldID) + "\")) > 0):\n")
+	tempPyFil.write("\tfieldIDele = driver.find_element_by_id(\"" + str(fieldID) + "\")\n")
+	tempPyFil.write("fieldIDele.send_keys(\"" + str(fieldValue) + "\")\n\n")
 
 	#if button id is not found then search using the input tag name
-	if (buttonID is None):
-		inp_elems = driver.find_elements_by_tag_name('input')
-		for i in inp_elems:
-			if (((i.get_attribute('type') == 'button') or (i.get_attribute('type') == 'submit'))):
-				i.click()
-				url2= driver.current_url
-				#to verify is login is successful or not,
-				#we wil verify if the username is available somewhere on the webpage
-				if(url2 == url):
-					print "login attempt failed"
-				else:
-					driver.get(url2)
-					print "login successful"
-					return "true"
-		return "false"
-	else:
-		buttonEle = driver.find_elements_by_tag_name(buttonID)
-		buttonEle.click()
+	tempPyFil.write("if (\""+ str(buttonID) + "\" is None):\n")
+	tempPyFil.write("\tinp_elems = driver.find_elements_by_tag_name('input')\n")
+	tempPyFil.write("\tfor i in inp_elems:\n")
+	tempPyFil.write("\t\tif (((i.get_attribute('type') == 'button') or (i.get_attribute('type') == 'submit'))):\n")
+	tempPyFil.write("\t\t\ti.click()\n")
+	tempPyFil.write("\t\t\turl2= driver.current_url\n")
+	
+	tempPyFil.write("\t\t\tif(url2 == url):\n")
+	tempPyFil.write("\t\t\t\tprint \"attack attempt failed\"\n")
+	tempPyFil.write("\t\t\telse:\n")
+	tempPyFil.write("\t\t\t\tdriver.get(url2)\n")
+	tempPyFil.write("\t\t\t\tprint \"attack successful\"\n")
+	tempPyFil.write("\t\telse:\n")
+	tempPyFil.write("\t\t\tbuttonEle = driver.find_elements_by_tag_name(\""+str(buttonID)+"\")\n")
+	tempPyFil.write("\t\t\tbuttonEle.click()\n")
 	
 
 
+def main():
+	#MAIN PROCESSSING
+	temp_file = open("step3output.json",'r')
+	data = json.load(temp_file)
+	data2 = data[0]
+	keyValues = {}
 
-#MAIN PROCESSSING
-temp_file = open("step3output.json",'r')
-data = json.load(temp_file)
-data2 = data[0]
-keyValues = {}
+	#Load main file to get login url
+	main_file = open("Singleinput.json",'r')
+	urlList = json.load(main_file)
+	index=0
 
-#Load main file to get login url
-main_file = open("Singleinput.json",'r')
-urlList = json.load(main_file)
+	# try possible attacks in json file
+	for key,value in data2.iteritems():
+		index=index+1
+		tempScriptFile = open("exploitScripts/attack"+str(index)+".sh",'w')
+		tempScriptFile.write("#!/bin/bash \n")
+		tempScriptFile.write("python attack"+str(index)+".py \n")
+		tempScriptFile.close()
+		tempPyFil = open("exploitScripts/attack"+str(index)+".py",'w')
+		url1 = key
+		print url1
+		getKeyValue(value,keyValues)
 
-# try possible attacks in json file
-for key,value in data2.iteritems():
-	url1 = key
-	print url1
-	getKeyValue(value,keyValues)
+		#get login url
+		urlDomain = url1[url1.find("//"):]
+		urlDomain = urlDomain[2:]
+		urlDomain = urlDomain[:urlDomain.find("/")]
+		loginURL = findLoginURL(urlDomain,urlList)
 
-	#get login url
-	urlDomain = url1[url1.find("//"):]
-	urlDomain = urlDomain[2:]
-	urlDomain = urlDomain[:urlDomain.find("/")]
-	loginURL = findLoginURL(urlDomain,urlList)
-
-	# check if attack is using a url only,no login required 
-	loginCheck = keyValues.get("LoginRequired","false")
-	uname = keyValues.get("username",None)
-	passwd = keyValues.get("password",None)
-	usernameID = keyValues.get("userID",None)
-	passwdID = keyValues.get("passID",None)
-	method = keyValues.get("method","GET")
-
-	# loginRequired = true then login and load the url
-	# two urls required -> one for login and other as the attack
-	if (loginCheck == "true"):
-	  	driver = webdriver.Firefox()
-	  	loginStatus = login(driver,uname,passwd,loginURL,usernameID,passwdID)
-	  	if(loginStatus == "true"):
+		# check if attack is using a url only,no login required 
+		loginCheck = keyValues.get("LoginRequired","false")
+		uname = keyValues.get("username",None)
+		passwd = keyValues.get("password",None)
+		usernameID = keyValues.get("userID",None)
+		passwdID = keyValues.get("passID",None)
+		method = keyValues.get("method","GET")
+		tempPyFil.write("from selenium import webdriver\n")
+		tempPyFil.write("from selenium.webdriver.common.keys import Keys\n")
+		tempPyFil.write("import httplib as http, urllib as url\n")
+		tempPyFil.write("\n")
+		tempPyFil.write("driver = webdriver.Firefox()\n")
+		# loginRequired = true then login and load the url
+		# two urls required -> one for login and other as the attack
+		if (loginCheck == "true"):
+			login(tempPyFil,uname,passwd,loginURL,usernameID,passwdID)
 			#login successful, now use the attack url
 			if(method == "POST"):
 				fieldID = keyValues.get("fieldID")
-				fieldVal = keyValues.get("fieldVal",None)
+				fieldVal = keyValues.get("fieldValue",None)
 				buttonID = keyValues.get("buttonID",None)
-				postAttack(driver,url1,fieldID,fieldVal,buttonID)
+				postAttack(tempPyFil,url1,fieldID,fieldVal,buttonID)
 			else:
-				driver.get(url1)
+				tempPyFil.write("driver.get(\""+str(url1)+"\")\n")
+		#if loginRequired is false then two attack options:
+		# 1) Login attack
+		# 2) No login, only attack by the url
 		else:
-			#login failed. Exit!
-			scr = "alert('login failed');"
-			driver.execute_script(scr)
-	#if loginRequired is false then two attack options:
-	# 1) Login attack
-	# 2) No login, only attack by the url
-	else:
-		if(uname or passwd):
-			driver1 = webdriver.Firefox()
-		  	loginStatus = login(driver1,uname,passwd,loginURL,usernameID,passwdID)
-	  		if(loginStatus == "true"):
-				#login attack successful, now use the attack url
-				scr = "alert('attack successful');"
-				driver1.execute_script(scr)
+			if(uname or passwd):
+				login(tempPyFil,uname,passwd,loginURL,usernameID,passwdID)
 			else:
-				#login failed. Exit!
-				scr = "alert('attack failed');"
-				driver1.execute_script(scr)
-		else:
-			driver2 = webdriver.Firefox()
-			#if the attack is a only using url then it may be using a post request
-			methodVal = keyValues.get("method","GET")
-			if(methodVal == "POST"):
-				fieldID = keyValues.get("fieldID")
-				fieldVal = keyValues.get("fieldVal",None)
-				buttonID = keyValues.get("buttonID",None)
-				postAttack(driver2,url1,fieldID,fieldVal,buttonID)
-			else:
-				driver2.get(url1)
+				#if the attack is a only using url then it may be using a post request
+				methodVal = keyValues.get("method","GET")
+				if(methodVal == "POST"):
+					fieldID = keyValues.get("fieldID")
+					fieldVal = keyValues.get("fieldValue",None)
+					buttonID = keyValues.get("buttonID",None)
+					postAttack(tempPyFil,url1,fieldID,fieldVal,buttonID)
+				else:
+					tempPyFil.write("driver.get(\""+str(url1)+"\")\n")
+		tempPyFil.close()
 
 
 
