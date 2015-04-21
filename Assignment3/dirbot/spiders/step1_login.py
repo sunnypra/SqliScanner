@@ -55,13 +55,14 @@ class DmozSpider(Spider):
             self.login_url = [value[0].get("loginurl")]
             self.login_user = value[0].get("params")[0].get("username")
             self.login_pass = value[0].get("params")[0].get("password")
+            
             urlDomain = self.login_url[0][self.login_url[0].find("//"):]
             urlDomain = urlDomain[2:]
             if (urlDomain.find("/") != -1):
                 self.allowed_domains = [urlDomain[0:urlDomain.find("/")]]
             else:
                 self.allowed_domains = [urlDomain]
-      
+      		
         dispatcher.connect(self.spider_closed, signals.spider_closed)
 
     def after_login(self, response):
@@ -217,6 +218,8 @@ class DmozSpider(Spider):
         #Wsites = sel.xpath('//ul/li')
         forms = sel.xpath("//ul/li/@onclick").extract()
         print "forms",forms
+        onclick = sel.xpath("//@onclick").extract()
+        print "onclick",onclick
         sites = sel.xpath('//a/@href').extract()
         actions=sel.xpath("//form/@action").extract()
         texts=sel.xpath("//input[@type='text']/@name").extract()
@@ -300,6 +303,41 @@ class DmozSpider(Spider):
         for f in forms :
             new_url1 =""
             print "qwqw",str(f)
+            pos = str(f).find('\'')
+            locVal = str(f)[pos+1:len(str(f))-1]
+            actstr = str(locVal)
+            print "bvbvbv",actstr
+            if(len(str(actstr)) != 1):
+                if((str(actstr).startswith("http")) or (str(actstr).startswith("https"))):
+                    new_url = str(actstr)
+                else:
+                    if((str(actstr).startswith("/www")) or (str(actstr).startswith("www"))):
+                        new_url = urljoin_rfc(get_base_url(response),str(actstr))#str(baseUrl)+str(actstr)
+                    else:
+                        new_url = urljoin_rfc(get_base_url(response),str(actstr))#str(baseUrl)+str(actstr)
+            else :
+                continue
+            if new_url in self.urllis:
+                continue
+            self.urllis.append(new_url)
+            if("logout" in str(new_url) or "calendar" in str(new_url)):
+                return
+            """
+            if(new_url1!=""):
+                self.urllis.append(new_url1)
+            """
+            dic = {}
+            dic["url"] = new_url
+            dic["method"] =""
+            dic["param"] = []
+            self.fin.append(dic)
+
+            #self.obj.write(str(self.allowed_domains[0])+":"+str(act)+",")
+            yield Request(new_url, meta={'url':new_url},callback=self.parse1)
+            
+        for f in onclick :
+            new_url1 =""
+            print "onclclclclclc",str(f)
             pos = str(f).find('\'')
             locVal = str(f)[pos+1:len(str(f))-1]
             actstr = str(locVal)
