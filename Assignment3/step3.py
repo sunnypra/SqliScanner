@@ -37,17 +37,33 @@ searchterms = ["mysql error","sql syntax", "mysql server version", "unknown colu
 
 class step3(Spider):
 	name = "step3"
+<<<<<<< HEAD
+
+	main_file = open("Singleinput.json",'r')
+	infoList1 = json.load(main_file)
+	infoList = infoList1[0]
+	for key,value in infoList.iteritems():
+		start_urls =  [str(key)]
+		login_urls = [value[0].get("loginurl")]
+		login_user = [value[0].get("params")[0].get("username")]
+		login_pass = [value[0].get("params")[0].get("password")]
+            
+	"""with open('Singleinput.json') as data_file:
+=======
 	
 	file4 = open("actualAttacks.txt","w")
 	file4.close()
 	"""
 	with open('Singleinput.json') as data_file:
+>>>>>>> a834b234107a1ad3343d0764af97a952390dba78
 		data = json.load(data_file)
 	start_urls = [data['starturl']]
 	login_urls = [data['loginurl']]
 	login_user = [data['username']]
 	login_pass = [data['password']]
 	"""
+<<<<<<< HEAD
+=======
 	main_file = open("Singleinput.json",'r')
 	infoList1 = json.load(main_file)
 	infoList = infoList1[0]
@@ -63,10 +79,14 @@ class step3(Spider):
 	login_user = ["admin@admin.com"]
 	login_pass = ["admin"]
 	'''
+>>>>>>> a834b234107a1ad3343d0764af97a952390dba78
 	params = []
 	loginid = ""
 	passid = ""
 	login_reqd = "false"
+
+
+
 	links = open('linksToAttack.txt','w')
 
 	with open('datalogin.json') as data_file:
