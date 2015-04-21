@@ -33,16 +33,30 @@ searchterms = ["mysql error","sql syntax", "mysql server version", "unknown colu
 
 class step3(Spider):
 	name = "step3"
-	with open('Singleinput.json') as data_file:
+
+	main_file = open("Singleinput.json",'r')
+	infoList1 = json.load(main_file)
+	infoList = infoList1[0]
+	for key,value in infoList.iteritems():
+		start_urls =  [str(key)]
+		login_urls = [value[0].get("loginurl")]
+		login_user = [value[0].get("params")[0].get("username")]
+		login_pass = [value[0].get("params")[0].get("password")]
+            
+	"""with open('Singleinput.json') as data_file:
 		data = json.load(data_file)
 	start_urls = [data['starturl']]
 	login_urls = [data['loginurl']]
 	login_user = [data['username']]
 	login_pass = [data['password']]
+	"""
 	params = []
 	loginid = ""
 	passid = ""
 	login_reqd = "false"
+
+
+
 	links = open('linksToAttack.txt','w')
 
 	with open('data.json') as data_file:

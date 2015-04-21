@@ -1,5 +1,5 @@
 ======
-dirbot
+dirbot1
 ======
 
 This is a Scrapy project to scrape websites from public web directories.
@@ -12,7 +12,7 @@ Items
 The items scraped by this project are websites, and the item is defined in the
 class::
 
-    dirbot.items.Website
+    dirbot1.items.Website
 
 See the source code for more details.
 
@@ -46,4 +46,4 @@ Pipelines
 This project uses a pipeline to filter out websites containing certain
 forbidden words in their description. This pipeline is defined in the class::
 
-    dirbot.pipelines.FilterWordsPipeline
+    dirbot1.pipelines.FilterWordsPipeline
