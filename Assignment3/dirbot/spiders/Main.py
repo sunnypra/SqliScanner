@@ -23,9 +23,9 @@ for key,value in data2.iteritems():
 			print type(value1)
 			if ((value1[0].get("params")[0].get("username") is None)
 			or (value1[0].get("params")[0].get("password") is None)):
-				value1[0]["loginRequired"]="No"
+				value1[0]["loginRequired"]="false"
 			else:
-				value1[0]["loginRequired"]="Yes"
+				value1[0]["loginRequired"]="true"
 			abc.append({key:value1})
 			f1 = open("Singleinput.json",'w')
 			print abc
@@ -40,9 +40,9 @@ for key,value in data2.iteritems():
 		print (value[0])
 		if ((value[0].get("params")[0].get("username") is None)
 			or (value[0].get("params")[0].get("password") is None)):
-				value[0]["loginRequired"]="No"
+				value[0]["loginRequired"]="false"
 		else:
-				value[0]["loginRequired"]="Yes"
+				value[0]["loginRequired"]="true"
 		abc.append({key:value})
 		f1 = open("Singleinput.json",'w')
 		print abc
