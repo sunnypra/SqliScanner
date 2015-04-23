@@ -1,15 +1,15 @@
 [
     {
-        "http://app4.com": [
+        "http://bm4.com/bm4.php": [
             {
-                "loginurl": "http://app4.com", 
+                "loginurl": "https://bm4.com/bm4.php", 
                 "params": [
                     {
-                        "username": "admin@admin.com", 
-                        "password": "admin"
+                        "username": "", 
+                        "password": ""
                     }
                 ], 
-                "loginRequired": "Yes"
+                "loginRequired": "true"
             }
         ]
     }

@@ -34,7 +34,7 @@ for key,value in data2.iteritems():
 #			os.system("scrapy crawl step1 > abc.txt")
 #			os.system("scrapy crawl step1login > abc1.txt")
 #			os.system("scrapy crawl step3 -s LOG_ENABLED=0")
-#			os.system("python -c 'import step4; print step4.main();'")
+			os.system("python -c 'import step4; print step4.main();'")
 	else:
 		print type(value[0])
 		print (value[0])
@@ -51,7 +51,7 @@ for key,value in data2.iteritems():
 #		os.system("scrapy crawl step1 > abc.txt")
 #		os.system("scrapy crawl step1login > abc1.txt")
 #		os.system("scrapy crawl step3 -s LOG_ENABLED=0")
-#		os.system("python -c 'import step4; print step4.main();'")
+		os.system("python -c 'import step4; print step4.main();'")
 #subprocess.Popen(["scrapy","crawl","step1"])
 #subprocess.Popen(["scrapy","crawl","step1login"])
 #subprocess.Popen(["scrapy","crawl","step3","-s","LOG_ENABLED=0"])
