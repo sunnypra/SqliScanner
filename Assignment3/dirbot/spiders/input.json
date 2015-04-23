@@ -1,4 +1,12 @@
 [{
+	"http://app1.com": [{
+		"loginurl": "http://app1.com/users/login.php",
+		"params": 
+			[{
+			"username": "",
+			"password": ""
+			}]
+	}],
 	"http://app4.com": [{
 		"loginurl": "http://app4.com",
 		"params": 
@@ -14,16 +22,16 @@
 			"username": "student",
 			"password": "student"
 			}]
-	}],
-	"http://app5.com": [{
+	},
+	{
 		"loginurl": "http://app5.com",
 		"params": 
 			[{
 			"username": "professor",
 			"password": "professor"
 			}]
-	}],
-	"http://app5.com": [{
+	},
+	{
 		"loginurl": "http://app5.com",
 		"params": 
 			[{
@@ -31,8 +39,48 @@
 			"password": "admin"
 			}]
 	}],
-	"http://app1.com": [{
+		"http://app1.com": [{
 		"loginurl": "http://app1.com/users/login.php",
+		"params": 
+			[{
+			"username": "",
+			"password": ""
+			}]
+	}],
+	"http://bm1.com": [{
+		"loginurl": "https://bm1.com/bm1/index.php",
+		"params": 
+			[{
+			"username": "admin@admin.com",
+			"password": "admin"
+			}]
+	}],
+	"https://bm2.com/bm2/login.php": [{
+		"loginurl": "https://bm2.com/bm2/login.php",
+		"params": 
+			[{
+			"username": "admin@admin.com",
+			"password": "admin"
+			}]
+	}],
+	"http://bm3.com/bm3.php": [{
+		"loginurl": "https://bm3.com/bm3.php",
+		"params": 
+			[{
+			"username": "",
+			"password": ""
+			}]
+	}],
+	"http://bm4.com/bm4.php": [{
+		"loginurl": "https://bm4.com/bm4.php",
+		"params": 
+			[{
+			"username": "",
+			"password": ""
+			}]
+	}],
+	"http://bm5.com/bm5.php": [{
+		"loginurl": "https://bm5.com/bm5.php",
 		"params": 
 			[{
 			"username": "",

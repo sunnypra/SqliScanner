@@ -18,8 +18,14 @@ for key,value in data2.iteritems():
 		while (index!=0):
 			abc=[]
 			index=index-1
-			newList = tempValue[index]
 			value1 = [tempValue[index]]
+			print "typ1"
+			print type(value1)
+			if ((value1[0].get("params")[0].get("username") is None)
+			or (value1[0].get("params")[0].get("password") is None)):
+				value1[0]["loginRequired"]="No"
+			else:
+				value1[0]["loginRequired"]="Yes"
 			abc.append({key:value1})
 			f1 = open("Singleinput.json",'w')
 			print abc
@@ -30,12 +36,19 @@ for key,value in data2.iteritems():
 #			os.system("scrapy crawl step3 -s LOG_ENABLED=0")
 #			os.system("python -c 'import step4; print step4.main();'")
 	else:
+		print type(value[0])
+		print (value[0])
+		if ((value[0].get("params")[0].get("username") is None)
+			or (value[0].get("params")[0].get("password") is None)):
+				value[0]["loginRequired"]="No"
+		else:
+				value[0]["loginRequired"]="Yes"
 		abc.append({key:value})
 		f1 = open("Singleinput.json",'w')
 		print abc
 		f1.write(json.dumps(abc, indent=4))
 		f1.close()
-	#	os.system("scrapy crawl step1 > abc.txt")
+#		os.system("scrapy crawl step1 > abc.txt")
 #		os.system("scrapy crawl step1login > abc1.txt")
 #		os.system("scrapy crawl step3 -s LOG_ENABLED=0")
 #		os.system("python -c 'import step4; print step4.main();'")
